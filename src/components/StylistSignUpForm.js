@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './StylistSignUpForm.css';
-import PropTypes from 'prop-types';
-import { thisTypeAnnotation } from '@babel/types';
+import axios from 'axios';
+
 
 
 class StylistSignUpForm extends Component {
@@ -14,35 +14,17 @@ class StylistSignUpForm extends Component {
 			phone_number: '',
 			email: '',
 			experience_in_years: '',
-			licenses: '',
-			photo1: '',
-			photo2: '',
-			photo3: '',
-			photo4: '',
-			photo5: '',
-			photo6: '',
+			licenses: null,
+			photo1: null,
+			photo2: null,
+			photo3: null,
+			photo4: null,
+			photo5: null,
+			photo6: null,
 			specializations: '',
 		}
 	}
 
-	validations = {
-		first_name: /.+/,
-		last_name: /.+/,
-		phone_number: /.+/,
-		email: /.+/,
-		experience_in_years: /.+/,
-		licenses: /.+/,
-		photo1: /.+/,
-		photo2: /.+/,
-		photo3: /.+/,
-		photo4: /.+/,
-		photo5: /.+/,
-		photo6: /.+/,
-	}
-
-	fieldValid = (fieldName) => {
-		return this.validations[fieldName].test(this.state[fieldName]);
-	}
 
 	onChangeHandler = (event) => {
 		const newState = {}
@@ -51,50 +33,36 @@ class StylistSignUpForm extends Component {
 		this.setState(newState);
 	}
 
+	onFileChangeHandler = (event) => {
+		console.log(event.target.files[0])
+
+		this.setState({
+			licenses: event.target.files[0],
+			photo1: event.target.files[0],
+			photo2: event.target.files[0],
+			photo3: event.target.files[0],
+			photo4: event.target.files[0],
+			photo5: event.target.files[0],
+			photo6: event.target.files[0],
+		})
+	}
+
 	handleSubmit = (event) => {
 		event.preventDefault();
-
-		let allFieldsValid = true;
-		Object.keys(this.validations).forEach((fieldName) => {
-			if (!this.fieldValid(fieldName)) {
-				allFieldsValid = false;
-			}
-		})
-
-		if (allFieldsValid) {
-			const newStylistData = {
-				first_name: this.state.first_name,
-				last_name: this.state.last_name,
-				phone_number: this.state.phone_number,
-				email: this.state.email,
-				experience_in_years: this.state.experience_in_years,
-				licenses: this.state.licenses,
-				photo1: this.state.photo1,
-				photo2: this.state.photo2,
-				photo3: this.state.photo3,
-				photo4: this.state.photo4,
-				photo5: this.state.photo5,
-				photo6: this.state.photo6,
-				specializations: this.state.specializations,
-			}
-
-
-			this.props.addNewStylistCallback(newStylistData);
-		}
-
+		
 		this.setState ({
 			first_name: '',
 			last_name: '',
 			phone_number: '',
 			email: '',
 			experience_in_years: '',
-			licenses: '',
-			photo1: '',
-			photo2: '',
-			photo3: '',
-			photo4: '',
-			photo5: '',
-			photo6: '',
+			licenses: null,
+			photo1: null,
+			photo2: null,
+			photo3: null,
+			photo4: null,
+			photo5: null,
+			photo6: null,
 			specializations: '',
 		});
 	}
@@ -146,15 +114,76 @@ class StylistSignUpForm extends Component {
 							onChange={this.onChangeHandler}
 						/>
 
+						<label> Licenses or Certifications: </label>
 						<input
-							placeholder="Licenses or Certifications"
 							type="file"
 							name="licenses"
 							value={this.state.licenses}
-							onChange={this.onChangeHandler}
+							onChange={this.onFileChangeHandler}
 						/>
 
+						<label> Photo 1: </label>
+						<input
+							type="file"
+							name="photo1"
+							value={this.state.photo1}
+							onChange={this.onFileChangeHandler}
+						/>
+
+						<label> Photo 2: </label>
+						<input
+							type="file"
+							name="photo2"
+							value={this.state.photo2}
+							onChange={this.onFileChangeHandler}
+						/>
+
+						<label> Photo 3: </label>
+						<input
+							type="file"
+							name="photo3"
+							value={this.state.photo3}
+							onChange={this.onFileChangeHandler}
+						/>
+
+						<label> Photo 4: </label>
+						<input
+							type="file"
+							name="photo4"
+							value={this.state.photo4}
+							onChange={this.onFileChangeHandler}
+						/>
+
+						<label> Photo 5: </label>
+						<input
+							type="file"
+							name="photo5"
+							value={this.state.photo5}
+							onChange={this.onFileChangeHandler}
+						/>
+
+						<label> Photo 6: </label>
+						<input
+							type="file"
+							name="photo6"
+							value={this.state.photo6}
+							onChange={this.onFileChangeHandler}
+						/>
+
+						<textarea
+							placeholder="Specializations"
+							type="text"
+							name="specializations"
+							value={this.state.specializations}
+							onChange={this.onChangeHandler}
+						/>
 					</div>
+
+					<button
+						type="submit"
+						onClick={this.addStylist}
+						className="submit-button"
+					> Sign Up </button>
 				</form>
 			</div>
 		);

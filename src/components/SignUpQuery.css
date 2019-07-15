@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|DM+Serif+Display|Great+Vibes|Tangerine&display=swap');
+
+.signup-query {
+	text-align: center;
+	padding-top: 8em;
+	font-family: 'DM Serif Display', serif;
+}
+
+.signup-query ul {
+	list-style: none;
+	padding-top: 2em;	
+}
+
+.signup-query h3 {
+	list-style: none;
+	padding-top: 2em;	
+	font-size: 45px;
+}
+
+.signup-query li a {
+	color: white;
+}
+
+.stylist {
+	padding-top: 1em;
+	font-size: 35px;
+}
+
+.salon-owner {
+	padding-top: 1em;
+	font-size: 35px;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.link-button {
+	background: rgb(117, 189, 210);
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+

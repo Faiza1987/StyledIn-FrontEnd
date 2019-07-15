@@ -4,44 +4,11 @@
 font-family: 'Tangerine', cursive;
 font-family: 'Bad Script', cursive; 
 font-family: 'DM Serif Display', serif;*/
-/* .App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-} */
-/* 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-} */
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
-} 
+}  */
 
 .navbar {
   background: rgb(117, 189, 210);
@@ -54,8 +21,8 @@ font-family: 'DM Serif Display', serif;*/
   flex-direction: row;
   justify-content: space-evenly;
   padding-top: 1em;
-  animation-name: fadeIn;
-  animation-duration: 10s;
+  /* animation-name: fadeIn;
+  animation-duration: 10s; */
 }
  
 .signup {
@@ -63,8 +30,8 @@ font-family: 'DM Serif Display', serif;*/
   padding-left: 35em;
   font-family: 'DM Serif Display', serif;
   font-size: 25px;
-  animation-name: fadeIn;
-  animation-duration: 10s;
+  /* animation-name: fadeIn;
+  animation-duration: 10s; */
 }
 
 .login {
@@ -72,22 +39,22 @@ font-family: 'DM Serif Display', serif;*/
   padding-left: 5em;
   font-family: 'DM Serif Display', serif;
   font-size: 25px;
-  animation-name: fadeIn;
-  animation-duration: 10s;
+  /* animation-name: fadeIn;
+  animation-duration: 5s; */
 } 
 
 .navbar li a{
   color: aliceblue;
-  animation-name: fadeIn;
-  animation-duration: 10s;
+  /* animation-name: fadeIn;
+  animation-duration: 5s; */
 }
 
 .logo {
   font-family: 'Great Vibes', cursive;
   font-size: 45px;
   font-weight: bold;
-  animation-name: fadeIn;
-  animation-duration: 10s;
+  /* animation-name: fadeIn;
+  animation-duration: 10s; */
 }
 
 
@@ -96,6 +63,6 @@ font-family: 'DM Serif Display', serif;*/
   text-align: center;
   font-size: 100px;
   padding-top: 2.5em;
-  animation-name: fadeIn;
-  animation-duration: 10s;
+  /* animation-name: fadeIn;
+  animation-duration: 10s; */
 }

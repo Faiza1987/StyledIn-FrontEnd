@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import SignUpQuery from './components/SignUpQuery';
 
 
 
@@ -25,7 +26,7 @@ class App extends Component {
                 <Link to='/'> StyledIn </Link>
             </li>
               <li className="signup">
-                <Link to='/signup'> Sign Up </Link>
+                <Link to='/signup-query'> Sign Up </Link>
               </li>
               <li className="login">
                 <Link to='/login'> Log In </Link>
@@ -33,8 +34,11 @@ class App extends Component {
             </ul>
           </div>
           <Route path="/" exact component={Title} />
-          <Route path="/" exact component={Wallpaper} />
-    
+          <Route path="/signup-query" 
+            render={(props)=>
+              <SignUpQuery/>
+            }
+          />
         </Router>
 
       </div>
@@ -50,13 +54,4 @@ function Title() {
   );
 }
 
-function Wallpaper() {
-  return(
-    <section>
-      <div className="image">
-        <img src={"https://image.freepik.com/free-photo/background-hairdresser-pr-salon-hair_1303-1315.jpg"} alt="hair salon wallpaper"/>
-      </div>
-    </section>
-  )
-}
 export default App;
