@@ -22,6 +22,7 @@ class StylistSignUpForm extends Component {
 			photo5: null,
 			photo6: null,
 			specializations: '',
+			error: null,
 		}
 	}
 
@@ -65,6 +66,34 @@ class StylistSignUpForm extends Component {
 			photo6: null,
 			specializations: '',
 		});
+	}
+
+	addStylist = () => {
+		const newStylistData = {
+			first_name: this.state.first_name,
+			last_name: this.state.last_name,
+			phone_number: this.state.phone_number,
+			email: this.state.email,
+			experience_in_years: this.state.experience_in_years,
+			licenses: this.state.licenses,
+			photo1: this.state.photo1,
+			photo2: this.state.photo2,
+			photo3: this.state.photo3,
+			photo4: this.state.photo4,
+			photo5: this.state.photo5,
+			photo6: this.state.photo6,
+			specializations: this.state.specializations,
+		}
+		axios.post('localhost:8000/api/users/', newStylistData)
+			.then((response) => {
+
+				console.log("This is what response.data looks like from the API on a successful response", response.data);
+			})
+			.catch((error) => {
+				this.setState({
+					error: error.message,
+				})
+			})
 	}
 
 	render() {
