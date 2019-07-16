@@ -1,12 +1,10 @@
 import React from 'react';
 import './LogInQuery.css';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import StylistRegistrationForm from "./StylistRegistrationForm";
-import SalonOwnerRegistrationForm from "./SalonOwnerRegistrationForm";
+import {Link} from 'react-router-dom';
 
 const LogInQuery = (props) => {
 	return(
-		<Router>
+
 			<div className="login-query">
 				<h3> Log In As: </h3>
 				<ul>
@@ -22,8 +20,6 @@ const LogInQuery = (props) => {
 					</li>
 				</ul>
 			</div>
-			
-		</Router>
 	);
 }
 
