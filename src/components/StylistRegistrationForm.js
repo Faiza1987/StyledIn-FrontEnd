@@ -122,151 +122,154 @@ class StylistSignUpForm extends Component {
 
 	render() {
 		return(
-			<div className="StylistSignUpForm">
+			<div>
 				<h3> Sign Up: </h3>
-				
-				<form className="StylistSignUpForm_form" onSubmit={this.handleSubmit}>
-					<div className="user_inputs">
-						<input 
-							placeholder="First Name"
-							type="text"
-							name="first_name"
-							value={this.state.first_name}
-							onChange={this.onChangeHandler}
-							required
-						/>
-						<br/>
-						<input
-							placeholder="Last Name"
-							type="text"
-							name="last_name"
-							value={this.state.last_name}
-							onChange={this.onChangeHandler}
-							required
-						/>
+				<div className="container">
+					<form className="StylistSignUpForm_form" onSubmit={this.handleSubmit}>
+						<div className="user_inputs">
+							<input 
+								placeholder="First Name"
+								type="text"
+								name="first_name"
+								value={this.state.first_name}
+								onChange={this.onChangeHandler}
+								required
+							/>
+							<br/>
+							<input
+								placeholder="Last Name"
+								type="text"
+								name="last_name"
+								value={this.state.last_name}
+								onChange={this.onChangeHandler}
+								required
+							/>
+							<br />
+							<input
+								placeholder="Phone Number (1234567890)"
+								type="text"
+								name="phone_number"
+								value={this.state.phone_number}
+								onChange={this.onChangeHandler}
+								required
+							/>
+							<br />
+							<input
+								placeholder="Email"
+								type="text"
+								name="email"
+								value={this.state.email}
+								onChange={this.onChangeHandler}
+								required
+							/>
+							<br />
+							<input
+								placeholder="Password"
+								type="password"
+								name="password"
+								value={this.state.password}
+								onChange={this.onChangeHandler}
+								required
+							/>
+							<br />
+							<input
+								placeholder="Experience (In years)"
+								type="text"
+								name="experience_in_years"
+								value={this.state.experience_in_years}
+								onChange={this.onChangeHandler}
+								required
+							/>
+							<br />
+							<div className="files">
+								<label> Licenses or Certifications: </label>
+								<input
+									type="file"
+									name="licenses"
+									id="license"
+									accept="license/pdf"
+									onChange={this.onFileChangeHandler}
+									// value={this.state.licenses}
+								/>
+								<br />
+								<label> Photo 1: </label>
+								<input
+									type="file"
+									name="photo1"
+									id="photo1"
+									accept="photo1/png, photo1/jpeg, photo1/jpg"
+									onChange={this.onFileChangeHandler}
+									// value={this.state.photo1}
+								/>
+								<br/>
+								<label> Photo 2: </label>
+								<input
+									type="file"
+									name="photo2"
+									id="photo2"
+									accept="photo2/png, photo2/jpeg, photo2/jpg"
+									onChange={this.onFileChangeHandler}
+									// value={this.state.photo2}
+								/>
+								<br />
+								<label> Photo 3: </label>
+								<input
+									type="file"
+									name="photo3"
+									id="photo3"
+									accept="photo3/png, photo3/jpeg, photo3/jpg"
+									onChange={this.onFileChangeHandler}
+									// value={this.state.photo3}
+								/>
+								<br />
+								<label> Photo 4: </label>
+								<input
+									type="file"
+									name="photo4"
+									id="photo4"
+									accept="photo4/png, photo4/jpeg, photo4/jpg"
+									onChange={this.onFileChangeHandler}
+									// value={this.state.photo4}
+								/>
+								<br />
+								<label> Photo 5: </label>
+								<input
+									type="file"
+									name="photo5"
+									id="photo5"
+									accept="photo5/png, photo5/jpeg, photo5/jpg"
+									onChange={this.onFileChangeHandler}
+									// value={this.state.photo5}
+								/>
+								<br />
+								<label> Photo 6: </label>
+								<input
+									type="file"
+									name="photo6"
+									id="photo6"
+									accept="photo6/png, photo6/jpeg, photo6/jpg"
+									onChange={this.onFileChangeHandler}
+									// value={this.state.photo6}
+								/>
+								<br />
+							</div>
+							<textarea
+								placeholder="Specializations"
+								type="text"
+								name="specializations"
+								value={this.state.specializations}
+								onChange={this.onChangeHandler}
+								required
+							/>
+						</div>
 						<br />
-						<input
-							placeholder="Phone Number (1234567890)"
-							type="text"
-							name="phone_number"
-							value={this.state.phone_number}
-							onChange={this.onChangeHandler}
-							required
-						/>
-						<br />
-						<input
-							placeholder="Email"
-							type="text"
-							name="email"
-							value={this.state.email}
-							onChange={this.onChangeHandler}
-							required
-						/>
-						<br />
-						<input
-							placeholder="Password"
-							type="password"
-							name="password"
-							value={this.state.password}
-							onChange={this.onChangeHandler}
-							required
-						/>
-						<br />
-						<input
-							placeholder="Experience (In years)"
-							type="text"
-							name="experience_in_years"
-							value={this.state.experience_in_years}
-							onChange={this.onChangeHandler}
-							required
-						/>
-						<br />
-						<label> Licenses or Certifications: </label>
-						<input
-							type="file"
-							name="licenses"
-							id="license"
-							accept="license/pdf"
-							onChange={this.onFileChangeHandler}
-							// value={this.state.licenses}
-						/>
-						<br />
-						<label> Photo 1: </label>
-						<input
-							type="file"
-							name="photo1"
-							id="photo1"
-							accept="photo1/png, photo1/jpeg, photo1/jpg"
-							onChange={this.onFileChangeHandler}
-							// value={this.state.photo1}
-						/>
-						<br/>
-						<label> Photo 2: </label>
-						<input
-							type="file"
-							name="photo2"
-							id="photo2"
-							accept="photo2/png, photo2/jpeg, photo2/jpg"
-							onChange={this.onFileChangeHandler}
-							// value={this.state.photo2}
-						/>
-						<br />
-						<label> Photo 3: </label>
-						<input
-							type="file"
-							name="photo3"
-							id="photo3"
-							accept="photo3/png, photo3/jpeg, photo3/jpg"
-							onChange={this.onFileChangeHandler}
-							// value={this.state.photo3}
-						/>
-						<br />
-						<label> Photo 4: </label>
-						<input
-							type="file"
-							name="photo4"
-							id="photo4"
-							accept="photo4/png, photo4/jpeg, photo4/jpg"
-							onChange={this.onFileChangeHandler}
-							// value={this.state.photo4}
-						/>
-						<br />
-						<label> Photo 5: </label>
-						<input
-							type="file"
-							name="photo5"
-							id="photo5"
-							accept="photo5/png, photo5/jpeg, photo5/jpg"
-							onChange={this.onFileChangeHandler}
-							// value={this.state.photo5}
-						/>
-						<br />
-						<label> Photo 6: </label>
-						<input
-							type="file"
-							name="photo6"
-							id="photo6"
-							accept="photo6/png, photo6/jpeg, photo6/jpg"
-							onChange={this.onFileChangeHandler}
-							// value={this.state.photo6}
-						/>
-						<br />
-						<textarea
-							placeholder="Specializations"
-							type="text"
-							name="specializations"
-							value={this.state.specializations}
-							onChange={this.onChangeHandler}
-							required
-						/>
-					</div>
-					<br />
-					<button
-						type="submit"
-						onClick={this.addStylist}
-						className="submit-button"
-					> Sign Up </button>
-				</form>
+						<button
+							type="submit"
+							onClick={this.addStylist}
+							className="submit-button"
+						> Sign Up </button>
+					</form>
+				</div>
 			</div>
 		);
 	}

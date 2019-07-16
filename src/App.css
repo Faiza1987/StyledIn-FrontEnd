@@ -12,7 +12,8 @@ font-family: 'DM Serif Display', serif;*/
 
 .navbar {
   background: rgb(117, 189, 210);
-  color: white;
+  width: 100%;
+  overflow: auto;
 }
 
 .navbar ul {
@@ -25,36 +26,38 @@ font-family: 'DM Serif Display', serif;*/
   animation-duration: 10s; */
 }
  
+.navbar li a{
+  color: aliceblue;
+  text-decoration: none;
+  float: left;
+  text-align: center;
+  padding: 12px;
+}
+
+.navbar li a:hover {
+  background-color: rgb(80, 169, 196);
+}
+
 .signup {
   padding-top: 0.5em;
-  padding-left: 35em;
+  padding-left: 35em; 
   font-family: 'DM Serif Display', serif;
   font-size: 25px;
-  /* animation-name: fadeIn;
-  animation-duration: 10s; */
 }
 
 .login {
   padding-top: 0.5em;
-  padding-left: 5em;
   font-family: 'DM Serif Display', serif;
   font-size: 25px;
-  /* animation-name: fadeIn;
-  animation-duration: 5s; */
 } 
 
-.navbar li a{
-  color: aliceblue;
-  /* animation-name: fadeIn;
-  animation-duration: 5s; */
-}
 
 .logo {
   font-family: 'Great Vibes', cursive;
   font-size: 45px;
   font-weight: bold;
-  /* animation-name: fadeIn;
-  animation-duration: 10s; */
+  animation-name: fadeIn;
+  animation-duration: 10s;
 }
 
 
