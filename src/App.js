@@ -5,6 +5,8 @@ import SignUpQuery from './components/SignUpQuery';
 import StylistRegistrationForm from './components/StylistRegistrationForm';
 import SalonOwnerRegistrationForm from './components/SalonOwnerRegistrationForm';
 import LogInQuery from './components/LogInQuery';
+import StylistLogIn from './components/StylistLogIn';
+
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +19,7 @@ class App extends Component {
       salonOwnerId: null,
     }
   }
+
   render(){
     return(
       <div>
@@ -36,9 +39,10 @@ class App extends Component {
           </div>
           <Route path="/" exact component={Title} />
           <Route path="/signup-query" component={SignUpQuery} />
-          <Route path="/register-stylist" exact component={StylistRegistrationForm} />
-          <Route path="/register-salonowner" exact component={SalonOwnerRegistrationForm} />
+          <Route path="/register-stylist" component={StylistRegistrationForm} />
+          <Route path="/register-salonowner" component={SalonOwnerRegistrationForm} />
           <Route path="/login-query" component={LogInQuery} />
+          <Route path="/login-stylist" component={StylistLogIn} />
         </Router>
 
       </div>
