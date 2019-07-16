@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SignUpQuery from './components/SignUpQuery';
 import StylistRegistrationForm from './components/StylistRegistrationForm';
 import SalonOwnerRegistrationForm from './components/SalonOwnerRegistrationForm';
-
+import LogInQuery from './components/LogInQuery';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class App extends Component {
                 <Link to='/signup-query'> Sign Up </Link>
               </li>
               <li className="login">
-                <Link to='/login'> Log In </Link>
+                <Link to='/login-query'> Log In </Link>
               </li>
             </ul>
           </div>
@@ -38,6 +38,7 @@ class App extends Component {
           <Route path="/signup-query" component={SignUpQuery} />
           <Route path="/register-stylist" exact component={StylistRegistrationForm} />
           <Route path="/register-salonowner" exact component={SalonOwnerRegistrationForm} />
+          <Route path="/login-query" component={LogInQuery} />
         </Router>
 
       </div>
