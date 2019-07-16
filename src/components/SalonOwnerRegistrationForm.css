@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|DM+Serif+Display|Great+Vibes|Tangerine&display=swap');
+
+h3 {
+	text-align: center;
+	font-family: 'DM Serif Display', serif;
+	font-size: 45px;
+}
+
+.SalonOwnerRegistrationForm_form {
+	margin: 2em;
+}
+
+.user-inputs{
+	margin-left: 21em;
+}
+
+.user-inputs input{
+	border-radius: 5px;
+	width: 50%;
+	margin: 0.5em;
+}
+
+.user-inputs textarea{
+	border-radius: 5px;
+	width: 50%;
+	margin: 0.5em;
+}
+
+.files {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.submit-button {
+	color: white;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(28, 184, 65);
+	font-size: 125%;
+	margin-left: 24em;
+	font-family: 'DM Serif Display', serif;
+}

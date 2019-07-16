@@ -168,7 +168,7 @@ class SalonOwnerRegistrationForm extends Component {
               />
               <br />
               <input
-                placeholder="Phone Number of Salon"
+                placeholder="1234567890"
                 type="text"
                 name="salon_phone_number"
                 value={this.state.salon_phone_number}

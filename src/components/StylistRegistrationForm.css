@@ -38,4 +38,9 @@ h3 {
 	background: rgb(28, 184, 65);
 	font-size: 125%;
 	margin-left: 24em;
+	font-family: 'DM Serif Display', serif;
+}
+
+.label-font {
+	font-family: 'DM Serif Display', serif;
 }

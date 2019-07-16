@@ -184,7 +184,10 @@ class StylistRegistrationForm extends Component {
               />
               <br />
               <section className="files">
-                <label> Licenses or Certifications: </label>
+                <label className="label-font">
+                  {" "}
+                  Licenses or Certifications:{" "}
+                </label>
                 <input
                   type="file"
                   name="licenses"
@@ -194,7 +197,7 @@ class StylistRegistrationForm extends Component {
                   // value={this.state.licenses}
                 />
                 <br />
-                <label> Photo 1: </label>
+                <label className="label-font"> Photo 1: </label>
                 <input
                   type="file"
                   name="photo1"
@@ -204,7 +207,7 @@ class StylistRegistrationForm extends Component {
                   // value={this.state.photo1}
                 />
                 <br />
-                <label> Photo 2: </label>
+                <label className="label-font"> Photo 2: </label>
                 <input
                   type="file"
                   name="photo2"
@@ -214,7 +217,7 @@ class StylistRegistrationForm extends Component {
                   // value={this.state.photo2}
                 />
                 <br />
-                <label> Photo 3: </label>
+                <label className="label-font"> Photo 3: </label>
                 <input
                   type="file"
                   name="photo3"
@@ -224,7 +227,7 @@ class StylistRegistrationForm extends Component {
                   // value={this.state.photo3}
                 />
                 <br />
-                <label> Photo 4: </label>
+                <label className="label-font"> Photo 4: </label>
                 <input
                   type="file"
                   name="photo4"
@@ -234,7 +237,7 @@ class StylistRegistrationForm extends Component {
                   // value={this.state.photo4}
                 />
                 <br />
-                <label> Photo 5: </label>
+                <label className="label-font"> Photo 5: </label>
                 <input
                   type="file"
                   name="photo5"
@@ -244,7 +247,7 @@ class StylistRegistrationForm extends Component {
                   // value={this.state.photo5}
                 />
                 <br />
-                <label> Photo 6: </label>
+                <label className="label-font"> Photo 6: </label>
                 <input
                   type="file"
                   name="photo6"
@@ -269,7 +272,10 @@ class StylistRegistrationForm extends Component {
               type="submit"
               onClick={this.addStylist}
               className="submit-button"
-            > Sign Up </button>
+            >
+              {" "}
+              Sign Up{" "}
+            </button>
           </form>
         </section>
       </div>
