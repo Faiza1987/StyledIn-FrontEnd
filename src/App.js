@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SignUpQuery from './components/SignUpQuery';
-
+import StylistRegistrationForm from './components/StylistRegistrationForm';
+import SalonOwnerRegistrationForm from './components/SalonOwnerRegistrationForm';
 
 
 class App extends Component {
@@ -34,8 +35,9 @@ class App extends Component {
             </ul>
           </div>
           <Route path="/" exact component={Title} />
-          <Route path="/signup-query" exact component={SignUpQuery}
-          />
+          <Route path="/signup-query" component={SignUpQuery} />
+          <Route path="/register-stylist" exact component={StylistRegistrationForm} />
+          <Route path="/register-salonowner" exact component={SalonOwnerRegistrationForm} />
         </Router>
 
       </div>

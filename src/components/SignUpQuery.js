@@ -2,6 +2,7 @@ import React from 'react';
 import './SignUpQuery.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import StylistRegistrationForm from './StylistRegistrationForm';
+import SalonOwnerRegistrationForm from './SalonOwnerRegistrationForm';
 
 const SignUpQuery = (props) => {
 	return (
@@ -21,8 +22,9 @@ const SignUpQuery = (props) => {
 					</li>
 				</ul>
 			</div>
-			<Route path="/register-stylist" component={StylistRegistrationForm}
+			<Route path="/register-stylist" exact component={StylistRegistrationForm}
 			/>
+			<Route path="/register-salonowner" exact component={SalonOwnerRegistrationForm} />
 		</Router>
 	);
 }
