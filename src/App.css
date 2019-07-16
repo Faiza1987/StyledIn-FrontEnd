@@ -5,10 +5,10 @@ font-family: 'Tangerine', cursive;
 font-family: 'Bad Script', cursive; 
 font-family: 'DM Serif Display', serif;*/
 
-/* @keyframes fadeIn {
+@keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
-}  */
+} 
 
 .navbar {
   background: rgb(117, 189, 210);
@@ -63,6 +63,6 @@ font-family: 'DM Serif Display', serif;*/
   text-align: center;
   font-size: 100px;
   padding-top: 2.5em;
-  /* animation-name: fadeIn;
-  animation-duration: 10s; */
+  animation-name: fadeIn;
+  animation-duration: 5s;
 }

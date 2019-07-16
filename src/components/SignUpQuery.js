@@ -1,7 +1,7 @@
 import React from 'react';
 import './SignUpQuery.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import StylistSignUpForm from './StylistSignUpForm';
+import StylistRegistrationForm from './StylistRegistrationForm';
 
 const SignUpQuery = (props) => {
 	return (
@@ -11,17 +11,17 @@ const SignUpQuery = (props) => {
 				<ul>
 					<li className="stylist">
 						<button className="link-button">
-							<Link to='/stylist-signup'> Stylist </Link>
+							<Link to='/register-stylist'> Stylist </Link>
 						</button>
 					</li>
 					<li className="salon-owner">
 						<button className="link-button">
-							<Link to='/salonowner-signup'> Salon Owner </Link>
+							<Link to='/register-salonowner'> Salon Owner </Link>
 						</button>
 					</li>
 				</ul>
 			</div>
-			<Route path="/stylist-signup" exact component={StylistSignUpForm}
+			<Route path="/register-stylist" component={StylistRegistrationForm}
 			/>
 		</Router>
 	);

@@ -34,10 +34,7 @@ class App extends Component {
             </ul>
           </div>
           <Route path="/" exact component={Title} />
-          <Route path="/signup-query" 
-            render={(props)=>
-              <SignUpQuery/>
-            }
+          <Route path="/signup-query" exact component={SignUpQuery}
           />
         </Router>
 
