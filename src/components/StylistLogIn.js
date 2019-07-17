@@ -30,8 +30,27 @@ class StylistLogIn extends Component {
 		this.setState({
       email: "",
       password: "",
+      error: null,
     });
-	}
+  }
+  
+  logIn = () => {
+
+    axios.get(
+        "https://styledin-stylists-api.herokuapp.com/api/users/",
+        this.state.email,
+        this.state.password
+      )
+      .then(response => {
+        console.log("RESPONSE DATA", response.data);
+      })
+      .catch(error => {
+        this.setState({
+          error: error.message
+        });
+      });
+
+  }
 
 
 	render(){
@@ -63,9 +82,11 @@ class StylistLogIn extends Component {
           </section>
 
           <div className="container">
-            <button type="button" className="cancelbtn">
-              Cancel
-            </button>
+            <button 
+              type="button" 
+              className="cancelbtn"
+              onClick={this.logIn}  
+            > Cancel </button>
             <span class="psw">
               Forgot <Link to="#">password?</Link>
             </span>
