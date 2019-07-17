@@ -9,9 +9,11 @@ class StylistLogIn extends Component {
 		this.state = {
       username: "",
 			email: "",
-			password: "",
+      password: "",
+      redirect: false,
 		}
 	}
+
 
 	validateForm() {
 		return this.state.email.length > 0 && this.state.password.length > 0 && this.state.username.length > 0;
@@ -31,8 +33,13 @@ class StylistLogIn extends Component {
       username: "",
       email: "",
       password: "",
-      error: null,
+      error: null
     });
+
+    this.setState({
+      redirect: true
+    })
+      window.location = '/stylist-profile';
   }
   
   loginStylist = () => {
@@ -46,8 +53,8 @@ class StylistLogIn extends Component {
         "https://styledin-stylists-api.herokuapp.com/api/auth/login/", payload)
       .then(response => {
         console.log("RESPONSE DATA", response);
-        let token = response.data["token"];
-        console.log("TOKEN:", token);
+        localStorage.setItem("token", response.data['token']);
+        console.log("TOKEN:", localStorage.getItem('token'));
       })
       .catch(error => {
         this.setState({
@@ -55,9 +62,8 @@ class StylistLogIn extends Component {
         });
       });
 
-      // Request to actually log user in
-      // Redirect user when they have logged in
-
+      // LOG USER IN WITH TOKEN 
+      // REDIRECT TO LOGINSUCCESS COMPONENT
   }
 
 	render(){

@@ -69,3 +69,13 @@ font-family: 'DM Serif Display', serif;*/
   animation-name: fadeIn;
   animation-duration: 5s;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgb(117, 189, 210);
+  color: white;
+  text-align: center;
+}
