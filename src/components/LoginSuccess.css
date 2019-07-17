@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|DM+Serif+Display|Great+Vibes|Tangerine&display=swap');
+
+.success {
+	text-align: center;
+	padding-top: 5em;
+	font-family: 'DM Serif Display', serif;
+}
+
+.success ul {
+	list-style: none;
+	padding-top: 2em;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.success h3 {
+	padding-top: 2em;	
+	font-size: 45px;
+}
+
+.success li a {
+	color: white;
+}
+
+.profile{
+	padding-top: 1em;
+	font-size: 35px;
+}
+
+.jobs {
+	padding-top: 1em;
+	font-size: 35px;
+}
+
+.link-button {
+	background: rgb(117, 189, 210);
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
