@@ -2,28 +2,27 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import SignUpQuery from './components/SignUpQuery';
-import StylistRegistrationForm from './components/StylistRegistrationForm';
-import SalonOwnerRegistrationForm from './components/SalonOwnerRegistrationForm';
+import StylistRegistrationForm from './components/stylists/StylistRegistrationForm';
+import SalonOwnerRegistrationForm from './components/salonowner/SalonOwnerRegistrationForm';
 import LogInQuery from './components/LogInQuery';
-import StylistLogIn from './components/StylistLogIn';
-import LoginSuccess from './components/LoginSuccess';
-import SearchJobs from './components/SearchJobs';
-
+import StylistLogIn from './components/stylists/StylistLogIn';
+import StylistLoginSuccess from './components/stylists/StylistLoginSuccess';
+import SearchJobs from './components/stylists/SearchJobs';
+import StylistProfile from './components/stylists/StylistProfile';
+import SalonOwnerLogin from './components/salonowner/SalonOwnerLogin';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      allStylists: [],
       stylistId: null,
-      allSalonOwners: [],
       salonOwnerId: null,
       isLoggedIn: false,
     }
   }
 
-  showLogout = () => {
+  toggleLoginButton = () => {
     this.setState({
       isLoggedIn: !this.state.isLoggedIn
     })
@@ -42,7 +41,6 @@ class App extends Component {
               </li>
               <li className="login">
                 <Link to="/login-query">
-                  {" "}
                   {this.state.isLoggedIn === false ? "Log In" : "Log Out"}
                 </Link>
               </li>
@@ -60,9 +58,33 @@ class App extends Component {
             component={SalonOwnerRegistrationForm}
           />
           <Route path="/login-query" component={LogInQuery} />
-          <Route path="/login-stylist" component={StylistLogIn}/>
-          <Route path="/stylist-profile" component={LoginSuccess} />
+          <Route
+            path="/login-stylist"
+            render={props => (
+              <StylistLogIn
+                toggleLoginButtonCallback={this.toggleLoginButton}
+              />
+            )}
+          />
+          <Route
+            path="/stylist-login-success"
+            component={StylistLoginSuccess}
+          />
+          <Route
+            path="/stylist-profile"
+            render={props => (
+              <StylistProfile stylistId={this.state.stylistId} />
+            )}
+          />
           <Route path="/search-jobs" component={SearchJobs} />
+          <Route
+            path="/login-salonowner"
+            render={props => (
+              <SalonOwnerLogin
+                toggleLoginButtonCallback={this.toggleLoginButton}
+              />
+            )}
+          />
         </Router>
       </div>
     );

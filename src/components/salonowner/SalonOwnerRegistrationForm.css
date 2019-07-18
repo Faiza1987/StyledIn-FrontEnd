@@ -10,17 +10,17 @@ h3 {
 	margin: 2em;
 }
 
-.user-inputs{
+.user_inputs{
 	margin-left: 21em;
 }
 
-.user-inputs input{
+.user_inputs input{
 	border-radius: 5px;
 	width: 50%;
 	margin: 0.5em;
 }
 
-.user-inputs textarea{
+.user_inputs textarea{
 	border-radius: 5px;
 	width: 50%;
 	margin: 0.5em;
@@ -37,6 +37,11 @@ h3 {
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	background: rgb(28, 184, 65);
 	font-size: 125%;
-	margin-left: 24em;
+	margin-bottom: 3em;
+	margin-left: 23em;
+	font-family: 'DM Serif Display', serif;
+}
+
+.label-font {
 	font-family: 'DM Serif Display', serif;
 }

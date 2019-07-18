@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import './LoginSuccess.css';
+import './StylistLoginSuccess.css';
 
 
-const LoginSuccess = () => {
+const StylistLoginSuccess = () => {
 	return (
     <div className="success">
       <h3> You have successfully logged in! </h3>
@@ -24,4 +24,4 @@ const LoginSuccess = () => {
   );
 }
 
-export default LoginSuccess;
+export default StylistLoginSuccess;

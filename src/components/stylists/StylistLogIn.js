@@ -10,10 +10,9 @@ class StylistLogIn extends Component {
       username: "",
 			email: "",
       password: "",
-      redirect: false,
+      error: null,
 		}
 	}
-
 
 	validateForm() {
 		return this.state.email.length > 0 && this.state.password.length > 0 && this.state.username.length > 0;
@@ -28,6 +27,9 @@ class StylistLogIn extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
+    
+    // BUGGY - CHANGES EVEN WITH INCORRECT LOGIN INFORMATION/// SOMETIMES WORKS AND SOMETIMES DOESN'T
+    this.props.toggleLoginButtonCallback();
 
 		this.setState({
       username: "",
@@ -35,11 +37,6 @@ class StylistLogIn extends Component {
       password: "",
       error: null
     });
-
-    this.setState({
-      redirect: true
-    })
-      window.location = '/stylist-profile';
   }
   
   loginStylist = () => {
@@ -50,11 +47,14 @@ class StylistLogIn extends Component {
     }
     // POST request to retreive JWT auth token from server
     axios.post(
-        "https://styledin-stylists-api.herokuapp.com/api/auth/login/", payload)
+      "https://styledin-stylists-api.herokuapp.com/api/auth/login/", payload)
       .then(response => {
         console.log("RESPONSE DATA", response);
         localStorage.setItem("token", response.data['token']);
         console.log("TOKEN:", localStorage.getItem('token'));
+        // LOG USER IN WITH TOKEN 
+        // REDIRECT TO LOGINSUCCESS COMPONENT
+        window.location = "/stylist-login-success";
       })
       .catch(error => {
         this.setState({
@@ -62,8 +62,6 @@ class StylistLogIn extends Component {
         });
       });
 
-      // LOG USER IN WITH TOKEN 
-      // REDIRECT TO LOGINSUCCESS COMPONENT
   }
 
 	render(){
@@ -73,7 +71,7 @@ class StylistLogIn extends Component {
           <section className="user-inputs">
             <input
               placeholder="Username"
-              type="username"
+              type="text"
               name="username"
               value={this.state.username}
               onChange={this.onChangeHandler}
