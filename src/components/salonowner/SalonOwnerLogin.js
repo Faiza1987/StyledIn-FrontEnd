@@ -50,9 +50,14 @@ class SalonOwnerLogin extends Component {
       "https://salonowners-api.herokuapp.com/owners_api/auth/login/", payload
     ).then(response => {
 			console.log("RESPONSE DATA", response);
-			localStorage.setItem("salonOwnerToken", response.data['token']);
-			console.log("Salon Owner Token ", localStorage.getItem("salonOwnerToken"));
 			
+			localStorage.setItem("salonOwnerToken", response.data['token']);
+			localStorage.setItem("salonId", response.data.user.pk);
+			
+			console.log("Salon Owner Token ", localStorage.getItem("salonOwnerToken"));
+			console.log("Stylist ID:", localStorage.getItem("stylistId"));
+			
+			window.location = "/salonowner-login-success";
 
 		}).catch(error => {
 			this.setState({

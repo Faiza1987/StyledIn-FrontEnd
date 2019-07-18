@@ -82,9 +82,10 @@ class SalonOwnerRegistrationForm extends Component {
       <div>
         <h3> Sign Up: </h3>
         <section className="container">
-					<form 
-						className="SalonOwnerRegistrationForm_form" 
-						onSubmit={this.handleSubmit}> 
+          <form
+            className="SalonOwnerRegistrationForm_form"
+            onSubmit={this.handleSubmit}
+          >
             <section className="user-inputs">
               <input
                 placeholder="First Name"
@@ -176,7 +177,7 @@ class SalonOwnerRegistrationForm extends Component {
                 required
               />
               <br />
-              <input
+              <textarea
                 placeholder="Description of Salon"
                 type="text"
                 name="salon_description"
@@ -186,11 +187,14 @@ class SalonOwnerRegistrationForm extends Component {
               />
             </section>
             <br />
-						<button 
-							type="submit" 
-							className="submit-button"
-							onClick={this.addSalonOwner}
-						> Sign Up </button>
+            <button
+              type="submit"
+              className="submit-button"
+              onClick={this.addSalonOwner}
+            >
+              
+              Sign Up
+            </button>
           </form>
         </section>
       </div>

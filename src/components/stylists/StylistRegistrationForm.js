@@ -273,8 +273,7 @@ class StylistRegistrationForm extends Component {
               onClick={this.addStylist}
               className="submit-button"
             >
-              {" "}
-              Sign Up{" "}
+              Sign Up
             </button>
           </form>
         </section>

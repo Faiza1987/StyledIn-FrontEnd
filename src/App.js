@@ -10,6 +10,9 @@ import StylistLoginSuccess from './components/stylists/StylistLoginSuccess';
 import SearchJobs from './components/stylists/SearchJobs';
 import StylistProfile from './components/stylists/StylistProfile';
 import SalonOwnerLogin from './components/salonowner/SalonOwnerLogin';
+import SalonOwnerLoginSuccess from './components/salonowner/SalonOwnerLoginSuccess';
+import SalonProfile from './components/salonowner/SalonProfile';
+import CreateJob from './components/salonowner/CreateJob';
 
 class App extends Component {
   constructor(props) {
@@ -18,15 +21,22 @@ class App extends Component {
     this.state = {
       stylistId: null,
       salonOwnerId: null,
-      isLoggedIn: false,
+
     }
   }
 
-  toggleLoginButton = () => {
+  componentDidMount() {
     this.setState({
-      isLoggedIn: !this.state.isLoggedIn
+      stylistId: localStorage.getItem('stylistId')
     })
   }
+  setStylistId = (id) => {
+    this.setState({
+      stylistId: id
+    })
+  }
+
+
   render(){
     return (
       <div>
@@ -41,7 +51,7 @@ class App extends Component {
               </li>
               <li className="login">
                 <Link to="/login-query">
-                  {this.state.isLoggedIn === false ? "Log In" : "Log Out"}
+                  {this.state.stylistId === null ? "Log In" : "Log Out"}
                 </Link>
               </li>
             </ul>
@@ -63,6 +73,7 @@ class App extends Component {
             render={props => (
               <StylistLogIn
                 toggleLoginButtonCallback={this.toggleLoginButton}
+                setStylistIdCallback={this.setStylistId}
               />
             )}
           />
@@ -85,6 +96,9 @@ class App extends Component {
               />
             )}
           />
+          <Route path="/salonowner-login-success" component={SalonOwnerLoginSuccess} />
+          <Route path="/salon-profile" component={SalonProfile} />
+          <Route path="/create-job" component={CreateJob} />
         </Router>
       </div>
     );

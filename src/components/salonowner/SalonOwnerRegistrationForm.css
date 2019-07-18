@@ -10,20 +10,20 @@ h3 {
 	margin: 2em;
 }
 
-.user_inputs{
+.user-inputs{
 	margin-left: 21em;
 }
 
-.user_inputs input{
+.user-inputs input{
 	border-radius: 5px;
 	width: 50%;
 	margin: 0.5em;
 }
 
-.user_inputs textarea{
+.user-inputs textarea{
 	border-radius: 5px;
 	width: 50%;
-	margin: 0.5em;
+	margin: 0;
 }
 
 .files {

@@ -27,9 +27,6 @@ class StylistLogIn extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-    
-    // BUGGY - CHANGES EVEN WITH INCORRECT LOGIN INFORMATION/// SOMETIMES WORKS AND SOMETIMES DOESN'T
-    this.props.toggleLoginButtonCallback();
 
 		this.setState({
       username: "",
@@ -49,9 +46,15 @@ class StylistLogIn extends Component {
     axios.post(
       "https://styledin-stylists-api.herokuapp.com/api/auth/login/", payload)
       .then(response => {
-        console.log("RESPONSE DATA", response);
+        console.log("RESPONSE DATA", JSON.stringify(response));
+        
         localStorage.setItem("token", response.data['token']);
+        localStorage.setItem("stylistId", response.data.user.pk);
+
+        this.props.setStylistIdCallback(localStorage.getItem('stylistId'));
+
         console.log("TOKEN:", localStorage.getItem('token'));
+        console.log("Stylist ID:", localStorage.getItem("stylistId"));
         // LOG USER IN WITH TOKEN 
         // REDIRECT TO LOGINSUCCESS COMPONENT
         window.location = "/stylist-login-success";
