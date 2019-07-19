@@ -28,9 +28,6 @@ class SalonOwnerLogin extends Component {
 	handleSubmit = event => {
 		event.preventDefault();
 
-		// BUGGY - CHANGES EVEN WITH INCORRECT LOGIN INFORMATION/// SOMETIMES WORKS AND SOMETIMES DOESN'T
-		this.props.toggleLoginButtonCallback();
-
 		this.setState({
 			username: "",
 			email: "",
@@ -54,9 +51,11 @@ class SalonOwnerLogin extends Component {
 			localStorage.setItem("salonOwnerToken", response.data['token']);
 			localStorage.setItem("salonId", response.data.user.pk);
 			
+			this.props.setSalonIdCallback(localStorage.getItem('salonId'));
+
 			console.log("Salon Owner Token ", localStorage.getItem("salonOwnerToken"));
 			console.log("Stylist ID:", localStorage.getItem("stylistId"));
-			
+
 			window.location = "/salonowner-login-success";
 
 		}).catch(error => {

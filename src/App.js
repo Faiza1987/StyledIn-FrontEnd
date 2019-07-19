@@ -20,24 +20,34 @@ class App extends Component {
 
     this.state = {
       stylistId: null,
-      salonOwnerId: null,
-
-    }
+      salonId: null
+    };
   }
 
-  componentDidMount() {
-    this.setState({
-      stylistId: localStorage.getItem('stylistId')
-    })
-  }
-  setStylistId = (id) => {
+  // THIS FUNCTION GETS THE ID FROM THE CALLBACK FUNCTION IN STYLIST LOGIN COMPONENT
+  setStylistId = id => {
     this.setState({
       stylistId: id
-    })
+    });
+  };
+  // THIS FUNCTION GETS THE ID FROM THE CALLBACK FUNCTION IN SALON OWNER LOGIN COMPONENT
+  setSalonId = id => {
+    this.setState({
+      salonId: id
+    });
+  };
+
+  // TO SET STYLIST ID SO THE STYLIST LOG IN PERSISTS DURING PAGE REFRESH
+  componentDidMount() {
+    this.setState({
+      stylistId: localStorage.getItem("stylistId"),
+      salonId: localStorage.getItem("salonId"),
+    });
   }
 
 
-  render(){
+
+  render() {
     return (
       <div>
         <Router>
@@ -59,10 +69,7 @@ class App extends Component {
           <Route path="/" exact component={Title} />
           <Route path="/" component={Footer} />
           <Route path="/signup-query" component={SignUpQuery} />
-          <Route
-            path="/register-stylist"
-            component={StylistRegistrationForm}
-          />
+          <Route path="/register-stylist" component={StylistRegistrationForm} />
           <Route
             path="/register-salonowner"
             component={SalonOwnerRegistrationForm}
@@ -72,7 +79,6 @@ class App extends Component {
             path="/login-stylist"
             render={props => (
               <StylistLogIn
-                toggleLoginButtonCallback={this.toggleLoginButton}
                 setStylistIdCallback={this.setStylistId}
               />
             )}
@@ -90,13 +96,16 @@ class App extends Component {
           <Route path="/search-jobs" component={SearchJobs} />
           <Route
             path="/login-salonowner"
-            render={props => (
-              <SalonOwnerLogin
-                toggleLoginButtonCallback={this.toggleLoginButton}
-              />
-            )}
+              render={props => 
+                <SalonOwnerLogin 
+                  setSalonIdCallback={this.setSalonId} 
+                />
+              }
           />
-          <Route path="/salonowner-login-success" component={SalonOwnerLoginSuccess} />
+          <Route
+            path="/salonowner-login-success"
+            component={SalonOwnerLoginSuccess}
+          />
           <Route path="/salon-profile" component={SalonProfile} />
           <Route path="/create-job" component={CreateJob} />
         </Router>

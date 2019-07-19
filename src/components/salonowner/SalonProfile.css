@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|DM+Serif+Display|Great+Vibes|Tangerine&display=swap');
+
+h3 {
+	padding-top: 2em;
+	text-align: center;
+	font-family: 'DM Serif Display', serif;
+	font-size: 45px;
+}
+
+summary {
+	text-align: center;
+}
+
+.salon-details li {
+	list-style: none;
+}
+
+.label {
+	font-weight: bold;
+	font-family: 'DM Serif Display', serif;
+	font-style: oblique;
+}

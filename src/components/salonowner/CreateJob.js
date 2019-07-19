@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 
 class CreateJob extends Component {
@@ -37,7 +38,7 @@ class CreateJob extends Component {
 			state: "",
 			zip_code: "",
 			description: "",
-			contact_email: "",
+			contact_email: ""
     }); 
   };
 
@@ -55,8 +56,21 @@ class CreateJob extends Component {
     };
 
     // Make a POST request to post job to API
-    // WILL NEED: Id of the owner that the job will be attached to
-  }
+    // WILL NEED: Id of the salon that the job will be attached to
+    axios.post("https://salonowners-api.herokuapp.com/jobs_api/jobs/" + 
+      localStorage.getItem("salonId"), 
+      payload
+    )
+    .then(response => {
+      console.log("This is what response.data looks like from the API on a successful response",
+        response.data);
+    })
+    .catch(error => {
+      this.setState({
+        error: error.message
+      });
+    });
+  };
 
 	render(){
 		return (
@@ -70,6 +84,7 @@ class CreateJob extends Component {
                 type="text"
                 name="title"
                 value={this.state.title}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
@@ -78,6 +93,7 @@ class CreateJob extends Component {
                 type="text"
                 name="hourly_rate"
                 value={this.state.hourly_rate}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
@@ -86,6 +102,7 @@ class CreateJob extends Component {
                 type="text"
                 name="company"
                 value={this.state.company}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
@@ -94,6 +111,7 @@ class CreateJob extends Component {
                 type="text"
                 name="address"
                 value={this.state.address}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
@@ -102,6 +120,7 @@ class CreateJob extends Component {
                 type="text"
                 name="city"
                 value={this.state.city}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
@@ -110,6 +129,7 @@ class CreateJob extends Component {
                 type="text"
                 name="state"
                 value={this.state.state}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
@@ -118,6 +138,7 @@ class CreateJob extends Component {
                 type="text"
                 name="zip_code"
                 value={this.state.zip_code}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
@@ -126,14 +147,16 @@ class CreateJob extends Component {
                 type="text"
                 name="description"
                 value={this.state.description}
+                onChange={this.onChangeHandler}
                 required
               />
               <br />
               <input
                 placeholder="Contact Email"
-                type="text"
+                type="email"
                 name="contact_email"
                 value={this.state.contact_email}
+                onChange={this.onChangeHandler}
                 required
               />
             </section>
@@ -141,7 +164,10 @@ class CreateJob extends Component {
               type="submit"
               className="submit-button"
               onClick={this.createJob}
-            > Create </button>
+            >
+              {" "}
+              Create{" "}
+            </button>
           </form>
         </section>
       </div>

@@ -49,23 +49,23 @@ class StylistProfile extends Component {
 		return (
       <div>
         <h3> Profile: </h3>
-        <section className="stylist-details">
+        <summary className="stylist-details">
           <ul>
-            <li> First Name: {this.state.stylistData.first_name} </li>
-            <li> Last Name: {this.state.stylistData.last_name} </li>
-            <li> Email: {this.state.stylistData.email} </li>
-            <li>Phone Number: {this.state.stylistData.profile.phone_number}</li>
-            <li>Enperience (in years):{this.state.stylistData.profile.years_experience}</li>
-            <li>Specializations:{this.state.stylistData.profile.specializations}</li>
-            <li>License/Certification: {this.state.stylistData.profile.licenses} </li>
-            <li> Photo 1: {this.state.stylistData.profile.photo1} </li>
-            <li> Photo 2: {this.state.stylistData.profile.photo2} </li>
-            <li> Photo 3: {this.state.stylistData.profile.photo3} </li>
-            <li> Photo 4: {this.state.stylistData.profile.photo4} </li>
-            <li> Photo 5: {this.state.stylistData.profile.photo5} </li>
-            <li> Photo 6: {this.state.stylistData.profile.photo6} </li>
+            <li> <span className="label"> First Name: </span> {this.state.stylistData.first_name} </li>
+            <li> <span className="label"> Last Name: </span>  {this.state.stylistData.last_name} </li>
+            <li> <span className="label"> Email: </span> {this.state.stylistData.email} </li>
+            <li><span className="label"> Phone Number: </span> {this.state.stylistData.profile.phone_number}</li>
+            <li><span className="label"> Experience (in years): </span> {this.state.stylistData.profile.years_experience}</li>
+            <li><span className="label"> Specializations: </span> {this.state.stylistData.profile.specializations}</li>
+            <li><span className="label"> License/Certification: </span> {this.state.stylistData.profile.licenses} </li>
+            <li> <span className="label"> Photo 1: </span> {this.state.stylistData.profile.photo1} </li>
+            <li> <span className="label"> Photo 2: </span> {this.state.stylistData.profile.photo2} </li>
+            <li> <span className="label"> Photo 3: </span> {this.state.stylistData.profile.photo3} </li>
+            <li> <span className="label"> Photo 4:</span>  {this.state.stylistData.profile.photo4} </li>
+            <li> <span className="label"> Photo 5: </span> {this.state.stylistData.profile.photo5} </li>
+            <li> <span className="label"> Photo 6: </span> {this.state.stylistData.profile.photo6} </li>
           </ul>
-        </section>
+        </summary>
       </div>
     );
 	}
