@@ -39,19 +39,42 @@ class SearchJobs extends Component {
 
 		const mappedJobs = this.state.allJobs.map((job, i) => {
 			return (
-        <div key={i}>
+        <div key={i} className="job-details">
           <ul>
-            <li>Title: {job.title}</li>
-            <li>Hourly Rate: {job.hourly_rate}</li>
-            <li>Salon: {job.company}</li>
-            <li>Address: {job.address}</li>
-            <li>City: {job.city}</li>
-            <li>State: {job.state}</li>
-            <li>Zip Code: {job.zip_code}</li>
-            <li>Description: {job.description}</li>
-            <li>Contact: <a href={`mailto:${job.contact_email}`}> Jobs at {job.company}</a>
-						</li>
+            <li>
+              <span className="label">Title: </span> {job.title}
+            </li>
+            <li>
+              <span className="label">Hourly Rate:</span>
+              {job.hourly_rate}
+            </li>
+            <li>
+              <span className="label">Salon:</span> {job.company}
+            </li>
+            <li>
+              <span className="label">Address:</span> {job.address}
+            </li>
+            <li>
+              <span className="label">City:</span> {job.city}
+            </li>
+            <li>
+              <span className="label">State:</span> {job.state}
+            </li>
+            <li>
+              <span className="label">Zip Code:</span> {job.zip_code}
+            </li>
+            <li>
+              <span className="label">Description:</span>
+              {job.description}
+            </li>
+            <li>
+              <span className="label">Contact:</span>
+              <a href={`mailto:${job.contact_email}`}>
+                Jobs at {job.company}
+              </a>
+            </li>
           </ul>
+          <hr />
         </div>
       );
 		})
