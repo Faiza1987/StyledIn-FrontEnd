@@ -51,6 +51,11 @@ font-family: 'DM Serif Display', serif;*/
   font-size: 25px;
 } 
 
+.all-jobs {
+  padding-top: 0.5em;
+  font-family: 'DM Serif Display', serif;
+  font-size: 25px;
+}
 
 .logo {
   font-family: 'Great Vibes', cursive;
@@ -59,7 +64,6 @@ font-family: 'DM Serif Display', serif;*/
   animation-name: fadeIn;
   animation-duration: 10s;
 }
-
 
 .title {
   font-family: 'Great Vibes', cursive;

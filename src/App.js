@@ -64,6 +64,9 @@ class App extends Component {
                   {this.state.stylistId === null ? "Log In" : "Log Out"}
                 </Link>
               </li>
+              <li className='all-jobs'>
+                <Link to="/search-jobs"> All Jobs </Link>
+              </li>
             </ul>
           </div>
           <Route path="/" exact component={Title} />
