@@ -13,6 +13,7 @@ import SalonOwnerLogin from './components/salonowner/SalonOwnerLogin';
 import SalonOwnerLoginSuccess from './components/salonowner/SalonOwnerLoginSuccess';
 import SalonProfile from './components/salonowner/SalonProfile';
 import CreateJob from './components/salonowner/CreateJob';
+import EditStylistProfile from './components/stylists/EditStylistProfile';
 
 class App extends Component {
   constructor(props) {
@@ -97,6 +98,7 @@ class App extends Component {
               <StylistProfile stylistId={this.state.stylistId} />
             )}
           />
+          <Route path="/edit-stylist-profile" component={EditStylistProfile}/>
           <Route path="/search-jobs" component={SearchJobs} />
           <Route
             path="/login-salonowner"

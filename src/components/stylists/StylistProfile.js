@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './StylistProfile.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class StylistProfile extends Component {
 	constructor(props){
@@ -66,6 +67,10 @@ class StylistProfile extends Component {
             <li> <span className="label"> Photo 6: </span> {this.state.stylistData.profile.photo6} </li>
           </ul>
         </summary>
+
+        <button className="edit-profile"> 
+          <Link to="/edit-stylist-profile"> Edit Profile </Link>
+        </button>
       </div>
     );
 	}

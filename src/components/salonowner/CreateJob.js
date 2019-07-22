@@ -150,14 +150,14 @@ class CreateJob extends Component {
                 required
               />
               <br />
-              <input
+              <textarea
                 placeholder="Description"
                 type="text"
                 name="description"
                 value={this.state.description}
                 onChange={this.onChangeHandler}
                 required
-              />
+              ></textarea>
               <br />
               <input
                 placeholder="Contact Email"
