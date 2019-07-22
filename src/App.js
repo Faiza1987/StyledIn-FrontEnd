@@ -69,7 +69,10 @@ class App extends Component {
           <Route path="/" exact component={Title} />
           <Route path="/" component={Footer} />
           <Route path="/signup-query" component={SignUpQuery} />
-          <Route path="/register-stylist" component={StylistRegistrationForm} />
+          <Route
+            path="/register-stylist"
+            component={StylistRegistrationForm}
+          />
           <Route
             path="/register-salonowner"
             component={SalonOwnerRegistrationForm}
@@ -78,9 +81,7 @@ class App extends Component {
           <Route
             path="/login-stylist"
             render={props => (
-              <StylistLogIn
-                setStylistIdCallback={this.setStylistId}
-              />
+              <StylistLogIn setStylistIdCallback={this.setStylistId} />
             )}
           />
           <Route
@@ -96,11 +97,9 @@ class App extends Component {
           <Route path="/search-jobs" component={SearchJobs} />
           <Route
             path="/login-salonowner"
-              render={props => 
-                <SalonOwnerLogin 
-                  setSalonIdCallback={this.setSalonId} 
-                />
-              }
+            render={props => (
+              <SalonOwnerLogin setSalonIdCallback={this.setSalonId} />
+            )}
           />
           <Route
             path="/salonowner-login-success"
