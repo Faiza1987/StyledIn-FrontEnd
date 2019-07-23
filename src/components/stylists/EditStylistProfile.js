@@ -11,7 +11,7 @@ class EditStylistProfile extends Component {
       phone_number: "",
       email: "",
       password: "",
-      experience_in_years: "",
+      years_experience: "",
       licenses: null,
       photo1: null,
       photo2: null,
@@ -52,7 +52,7 @@ class EditStylistProfile extends Component {
       phone_number: "",
       email: "",
       password: "",
-      experience_in_years: "",
+      years_experience: "",
       licenses: "",
       photo1: "",
       photo2: "",
@@ -61,7 +61,7 @@ class EditStylistProfile extends Component {
       photo5: "",
       photo6: "",
       specializations: "",
-      error: null,
+      error: null
     });
 	}
 
@@ -73,7 +73,7 @@ class EditStylistProfile extends Component {
       last_name: this.state.last_name,
       profile: {
         phone_number: this.state.phone_number,
-        experience_in_years: this.state.experience_in_years
+        years_experience: this.state.years_experience
       }
     };
     if (this.state.licenses !== null) {
@@ -100,7 +100,7 @@ class EditStylistProfile extends Component {
 		updatedStylistData.profile.specializations = this.state.specializations;
 		
 		axios.put(
-      "https://styledin-stylists-api.herokuapp.com/api/users/" + localStorage.getItem("stylistId"),
+      "https://styledin-stylists-api.herokuapp.com/api/users/" + localStorage.getItem("stylistId") + "/",
       updatedStylistData,
       {
 				headers: {
@@ -123,7 +123,10 @@ class EditStylistProfile extends Component {
       <div>
         <h3> Edit Profile: </h3>
         <section className="container">
-          <form className="EditStylistProfileForm_form" onSubmit={this.handleSubmit}>
+          <form
+            className="EditStylistProfileForm_form"
+            onSubmit={this.handleSubmit}
+          >
             <section className="user_inputs">
               <input
                 placeholder="First Name"
@@ -173,8 +176,8 @@ class EditStylistProfile extends Component {
               <input
                 placeholder="Experience (In Years)"
                 type="text"
-                name="experience_in_years"
-                value={this.state.experience_in_years}
+                name="years_experience"
+                value={this.state.years_experience}
                 onChange={this.onChangeHandler}
                 required
               />
@@ -256,9 +259,11 @@ class EditStylistProfile extends Component {
               />
             </section>
             <br />
-            <button type="submit" className="submit-button"
-						onClick={this.editProfile}
-						>
+            <button
+              type="submit"
+              className="submit-button"
+              onClick={this.editProfile}
+            >
               Update
             </button>
           </form>

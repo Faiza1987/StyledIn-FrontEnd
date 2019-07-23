@@ -21,7 +21,6 @@ font-family: 'DM Serif Display', serif;*/
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-top: 1em;
   /* animation-name: fadeIn;
   animation-duration: 10s; */
 }
@@ -40,7 +39,7 @@ font-family: 'DM Serif Display', serif;*/
 
 .signup {
   padding-top: 0.5em;
-  padding-left: 35em; 
+  padding-left: 25em; 
   font-family: 'DM Serif Display', serif;
   font-size: 25px;
 }
@@ -50,6 +49,18 @@ font-family: 'DM Serif Display', serif;*/
   font-family: 'DM Serif Display', serif;
   font-size: 25px;
 } 
+
+.all-stylists {
+  padding-top: 0.5em;
+  font-family: 'DM Serif Display', serif;
+  font-size: 25px;
+}
+
+.all-salons{
+  padding-top: 0.5em;
+  font-family: 'DM Serif Display', serif;
+  font-size: 25px;
+}
 
 .all-jobs {
   padding-top: 0.5em;
@@ -63,6 +74,7 @@ font-family: 'DM Serif Display', serif;*/
   font-weight: bold;
   animation-name: fadeIn;
   animation-duration: 10s;
+  padding-top: 0.5em;
 }
 
 .title {

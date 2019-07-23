@@ -14,6 +14,9 @@ import SalonOwnerLoginSuccess from './components/salonowner/SalonOwnerLoginSucce
 import SalonProfile from './components/salonowner/SalonProfile';
 import CreateJob from './components/salonowner/CreateJob';
 import EditStylistProfile from './components/stylists/EditStylistProfile';
+import AllStylists from './AllStylists';
+import AllSalonOwners from './AllSalonOwners';
+import QueryPage from './QueryPage';
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +68,13 @@ class App extends Component {
                   {this.state.stylistId === null ? "Log In" : "Log Out"}
                 </Link>
               </li>
-              <li className='all-jobs'>
+              <li className="all-stylists">
+                <Link to="/all-stylists"> All Stylists </Link>
+              </li>
+              <li className="all-salons">
+                <Link to="/all-salons"> All Salons </Link>
+              </li>
+              <li className="all-jobs">
                 <Link to="/search-jobs"> All Jobs </Link>
               </li>
             </ul>
@@ -98,18 +107,23 @@ class App extends Component {
               <StylistProfile stylistId={this.state.stylistId} />
             )}
           />
-          <Route path="/edit-stylist-profile" component={EditStylistProfile}/>
+          <Route
+            path="/edit-stylist-profile"
+            render={props => (
+              <EditStylistProfile stylistId={this.stylistId} />
+            )}
+          />
+          <Route path="/all-stylists" component={AllStylists} />
+          <Route path="/all-salons" component={AllSalonOwners}/>
           <Route path="/search-jobs" component={SearchJobs} />
+          <Route path="/query" component={QueryPage} />
           <Route
             path="/login-salonowner"
             render={props => (
               <SalonOwnerLogin setSalonIdCallback={this.setSalonId} />
             )}
           />
-          <Route
-            path="/salonowner-login-success"
-            component={SalonOwnerLoginSuccess}
-          />
+          <Route path="/salonowner-login-success" component={SalonOwnerLoginSuccess} />
           <Route path="/salon-profile" component={SalonProfile} />
           <Route path="/create-job" component={CreateJob} />
         </Router>

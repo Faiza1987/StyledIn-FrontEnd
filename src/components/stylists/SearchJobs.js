@@ -18,7 +18,7 @@ class SearchJobs extends Component {
 			"https://salonowners-api.herokuapp.com/jobs_api/jobs/"
 		)
 		.then(response => {
-			console.log("This is what the response looks like on a successful api call", response.data);
+			console.log("ALL JOBS", response.data);
 
 			this.setState({
 				allJobs: response.data
@@ -52,20 +52,10 @@ class SearchJobs extends Component {
               <span className="label">Salon:</span> {job.company}
             </li>
             <li>
-              <span className="label">Address:</span> {job.address}
-            </li>
-            <li>
               <span className="label">City:</span> {job.city}
             </li>
             <li>
               <span className="label">State:</span> {job.state}
-            </li>
-            <li>
-              <span className="label">Zip Code:</span> {job.zip_code}
-            </li>
-            <li>
-              <span className="label">Description:</span>
-              {job.description}
             </li>
             <li>
               <span className="label">Contact:</span>
