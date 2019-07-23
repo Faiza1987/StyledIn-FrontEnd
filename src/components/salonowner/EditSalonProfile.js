@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import './SalonOwnerRegistrationForm.css';
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-class SalonOwnerRegistrationForm extends Component {
-  constructor(props) {
-    super(props);
+class EditSalonProfile extends Component {
+	constructor(props){
+		super(props);
 
-    this.state = {
+		this.state = {
       first_name: "",
       last_name: "",
       email: "",
@@ -20,7 +19,7 @@ class SalonOwnerRegistrationForm extends Component {
       salon_description: "",
       error: null
     };
-  }
+	}
 
 	onChangeHandler = event => {
 		const newState = {};
@@ -43,44 +42,50 @@ class SalonOwnerRegistrationForm extends Component {
       salon_state: "",
       salon_zip: "",
       salon_phone_number: "",
-      salon_description: ""
+      salon_description: "",
+      error: null
     });
 	}
 
-	addSalonOwner = () => {
-		const newSalonOwnerData = {
-			email: this.state.email,
-			first_name: this.state.first_name,
-			last_name: this.state.last_name,
-			password: this.state.password,
-			profile: {
-				salon_name: this.state.salon_name,
-				salon_address: this.state.salon_address,
-				salon_city: this.state.salon_city,
-				salon_state: this.state.salon_state,
-				salon_zip: this.state.salon_zip,
-				salon_phone_number: this.state.salon_phone_number,
-				salon_description: this.state.salon_description
-			}
-		};
+	editProfile = () => {
+		const updatedSalonData = {
+      email: this.state.email,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      password: this.state.password,
+      profile: {
+        salon_name: this.state.salon_name,
+        salon_address: this.state.salon_address,
+        salon_city: this.state.salon_city,
+        salon_state: this.state.salon_state,
+        salon_zip: this.state.salon_zip,
+        salon_phone_number: this.state.salon_phone_number,
+        salon_description: this.state.salon_description
+      }
+    };
 
-		axios.post("https://salonowners-api.herokuapp.com/owners_api/users/", newSalonOwnerData)
+			axios.put(
+				"https://salonowners-api.herokuapp.com/owners_api/users/" + localStorage.getItem("salonId") + "/", updatedSalonData,
+				{
+					headers: {
+						Authorization: `JWT ${localStorage.getItem("salonOwnerToken")}`
+					}
+				}
+			)
 			.then(response => {
-				console.log("This is what response.data looks like from the API on a successful response",
-          response.data );
+			console.log("This is what response.data looks like from the API on a successful response", response.data);
 			})
 			.catch(error => {
 				this.setState({
 					error: error.message
 				});
 			});
-	};
+	}
 
-
-  render() {
-    return (
+	render(){
+		return (
       <div>
-        <h3> Sign Up: </h3>
+        <h3> Edit Profile: </h3>
         <section className="container">
           <form
             className="SalonOwnerRegistrationForm_form"
@@ -190,16 +195,15 @@ class SalonOwnerRegistrationForm extends Component {
             <button
               type="submit"
               className="submit-button"
-              onClick={this.addSalonOwner}
+              onClick={this.editProfile}
             >
-              
-              Sign Up
+              Update
             </button>
           </form>
         </section>
       </div>
     );
-  }
+	}
 }
 
-export default SalonOwnerRegistrationForm;
+export default EditSalonProfile;

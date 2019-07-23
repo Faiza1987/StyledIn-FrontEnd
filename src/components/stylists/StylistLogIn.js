@@ -101,7 +101,7 @@ class StylistLogIn extends Component {
             <br />
             <button 
               type="submit" 
-              className="submit-button"
+              className="login-button"
               onClick={this.loginStylist} > Log In </button>
           </section>
         </div>

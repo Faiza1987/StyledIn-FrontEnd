@@ -14,6 +14,7 @@ import SalonOwnerLoginSuccess from './components/salonowner/SalonOwnerLoginSucce
 import SalonProfile from './components/salonowner/SalonProfile';
 import CreateJob from './components/salonowner/CreateJob';
 import EditStylistProfile from './components/stylists/EditStylistProfile';
+import EditSalonProfile from './components/salonowner/EditSalonProfile';
 import AllStylists from './AllStylists';
 import AllSalonOwners from './AllSalonOwners';
 import QueryPage from './QueryPage';
@@ -125,6 +126,7 @@ class App extends Component {
           />
           <Route path="/salonowner-login-success" component={SalonOwnerLoginSuccess} />
           <Route path="/salon-profile" component={SalonProfile} />
+          <Route path="/edit-salon-profile" component={EditSalonProfile} />
           <Route path="/create-job" component={CreateJob} />
         </Router>
       </div>

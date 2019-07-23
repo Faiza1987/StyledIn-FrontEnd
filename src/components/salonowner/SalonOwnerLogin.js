@@ -99,7 +99,7 @@ class SalonOwnerLogin extends Component {
 						<br/>
 						<button
 							type="submit"
-							className="submit-button"
+							className="login-button"
 							onClick={this.loginSalonOwner}
 						> Log In </button>
 					</section>

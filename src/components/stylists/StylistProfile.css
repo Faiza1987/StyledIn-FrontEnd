@@ -21,3 +21,15 @@ summary {
 	font-style: oblique;
 	padding-right: 0.5em;
 }
+
+.edit-profile {
+	color: white;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(144, 190, 242);
+	font-size: 125%;
+	margin-bottom: 3em;
+	margin-top: 1em;
+	margin-left: 20em;
+	font-family: 'DM Serif Display', serif;
+}

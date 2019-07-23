@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './SalonProfile.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 class SalonProfile extends Component {
@@ -89,6 +90,10 @@ class SalonProfile extends Component {
             </li>
           </ul>
         </summary>
+
+        <button className="edit-profile">
+          <Link to="edit-salon-profile"> Edit Profile </Link>
+        </button>
       </div>
     );
 	}
