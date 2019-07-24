@@ -68,12 +68,16 @@ class SalonOwnerRegistrationForm extends Component {
 			.then(response => {
 				console.log("This is what response.data looks like from the API on a successful response",
           response.data );
+
+          alert("Your account has been created.")
 			})
 			.catch(error => {
+        alert('Something went wrong, please try again shortly.')
 				this.setState({
 					error: error.message
 				});
-			});
+      });
+      
 	};
 
 

@@ -111,6 +111,7 @@ class StylistRegistrationForm extends Component {
           "This is what response.data looks like from the API on a successful response",
           response.data
         );
+        alert("Your account has been created.");
       })
       .catch(error => {
         this.setState({

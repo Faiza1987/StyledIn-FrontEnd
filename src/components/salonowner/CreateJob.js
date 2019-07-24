@@ -72,8 +72,11 @@ class CreateJob extends Component {
           "This is what response.data looks like from the API on a successful response",
           response.data
         );
+
+        alert('The job has been created!');
       })
       .catch(error => {
+        alert("Something went wrong, please try again shortly.");
         this.setState({
           error: error.message
         });
