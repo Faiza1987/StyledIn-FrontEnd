@@ -14,21 +14,20 @@ class AllStylists extends Component {
 	}
 
 	componentDidMount(){
-		axios.get(
-			"https://styledin-stylists-api.herokuapp.com/api/users/"
-		)
-		.then(response => {
-			console.log("COMPONENT DID MOUNT", response.data)
+		axios
+      .get("https://styledin-stylists-api.herokuapp.com/api/users/")
+      .then(response => {
+        console.log("COMPONENT DID MOUNT", response.data);
 
-			this.setState({
-				allStylists: response.data
-			})
-		})
-		.catch(error => {
-			this.setState({
-				error: error.message
-			});
-		});
+        this.setState({
+          allStylists: response.data
+        });
+      })
+      .catch(error => {
+        this.setState({
+          error: error.message
+        });
+      });
 	}
 
 	render(){

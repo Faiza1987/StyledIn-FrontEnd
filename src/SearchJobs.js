@@ -31,6 +31,13 @@ class SearchJobs extends Component {
 		});
 	}
 
+  applyJob = () => {
+    if(localStorage.getItem("stylistId") !== null){
+      alert("Your application has been submitted!");
+    } else {
+      alert("You must be logged in as a stylist to apply for jobs");
+    }
+  }
 	render(){
 
 		if(this.state.allJobs === null){
@@ -62,6 +69,16 @@ class SearchJobs extends Component {
               <a href={`mailto:${job.contact_email}`}>
                 Jobs at {job.company}
               </a>
+            </li>
+            <br/>
+            <li>
+              <button
+                type="submit"
+                className="apply" 
+                onClick={this.applyJob} 
+              > 
+                Apply
+              </button>
             </li>
           </ul>
           <hr />

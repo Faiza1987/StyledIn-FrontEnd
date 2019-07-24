@@ -82,7 +82,7 @@ class SalonProfile extends Component {
             </li>
             <li>
               <span className="label">Salon Zip Code: </span>
-              {this.state.salonData.profile.salon_zip_code}
+              {this.state.salonData.profile.salon_zip}
             </li>
             <li>
               <span className="label">Salon Description: </span>

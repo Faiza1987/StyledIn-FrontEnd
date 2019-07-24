@@ -7,7 +7,7 @@ import SalonOwnerRegistrationForm from './components/salonowner/SalonOwnerRegist
 import LogInQuery from './components/LogInQuery';
 import StylistLogIn from './components/stylists/StylistLogIn';
 import StylistLoginSuccess from './components/stylists/StylistLoginSuccess';
-import SearchJobs from './components/stylists/SearchJobs';
+import SearchJobs from './SearchJobs';
 import StylistProfile from './components/stylists/StylistProfile';
 import SalonOwnerLogin from './components/salonowner/SalonOwnerLogin';
 import SalonOwnerLoginSuccess from './components/salonowner/SalonOwnerLoginSuccess';
