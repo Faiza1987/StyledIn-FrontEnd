@@ -36,7 +36,11 @@ class AllStylists extends Component {
 		if (this.state.allStylists === null){
 			return null;
 		}
-		
+    
+    if(localStorage.getItem("salonId") !== null){
+      window.location ='/stylist-profile' 
+    } 
+
 		const mappedStylists = this.state.allStylists.filter(stylist => stylist.profile !== null).map((stylist, i) => {
 			return (
         <div key={i} className="stylist-details">

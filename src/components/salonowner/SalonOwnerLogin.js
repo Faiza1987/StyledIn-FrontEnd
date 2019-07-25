@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './SalonOwnerLogin.css';
 import axios from 'axios';
 
+// const BASE_URL = "http://localhost:8000";
+
 class SalonOwnerLogin extends Component {
 	constructor(props){
 		super(props);
@@ -43,26 +45,29 @@ class SalonOwnerLogin extends Component {
 			password: this.state.password,
 		}
 
-		axios.post(
-      "https://salonowners-api.herokuapp.com/owners_api/auth/login/", payload
-    ).then(response => {
-			console.log("RESPONSE DATA", response);
-			
-			localStorage.setItem("salonOwnerToken", response.data['token']);
-			localStorage.setItem("salonId", response.data.user.pk);
-			
-			this.props.setSalonIdCallback(localStorage.getItem('salonId'));
+		axios
+      .post("http://localhost:8000/owners_api/auth/login/", payload)
+      .then(response => {
+        console.log("RESPONSE DATA", response);
 
-			console.log("Salon Owner Token ", localStorage.getItem("salonOwnerToken"));
-			console.log("Stylist ID:", localStorage.getItem("stylistId"));
+        localStorage.setItem("salonOwnerToken", response.data["token"]);
+        localStorage.setItem("salonId", response.data.user.pk);
 
-			window.location = "/salonowner-login-success";
+        this.props.setSalonIdCallback(localStorage.getItem("salonId"));
 
-		}).catch(error => {
-			this.setState({
-				error: error.message
-			});
-		});
+        console.log(
+          "Salon Owner Token ",
+          localStorage.getItem("salonOwnerToken")
+        );
+        console.log("Stylist ID:", localStorage.getItem("stylistId"));
+
+        window.location = "/salonowner-login-success";
+      })
+      .catch(error => {
+        this.setState({
+          error: error.message
+        });
+      });
 	}
 
 	render(){

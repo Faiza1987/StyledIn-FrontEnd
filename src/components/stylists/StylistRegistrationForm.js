@@ -73,39 +73,41 @@ class StylistRegistrationForm extends Component {
       password: this.state.password,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
-      profile: {
+      stylist_profile: {
         phone_number: this.state.phone_number,
         experience_in_years: this.state.experience_in_years
       }
     };
     if (this.state.licenses !== null) {
-      newStylistData.profile.licenses = this.state.licenses;
+      newStylistData.stylist_profile.licenses = this.state.licenses;
     }
     if (this.state.photo1 !== null) {
-      newStylistData.profile.photo1 = this.state.photo1;
+      newStylistData.stylist_profile.photo1 = this.state.photo1;
     }
     if (this.state.photo2 !== null) {
-      newStylistData.profile.photo2 = this.state.photo2;
+      newStylistData.stylist_profile.photo2 = this.state.photo2;
     }
     if (this.state.photo3 !== null) {
-      newStylistData.profile.photo3 = this.state.photo3;
+      newStylistData.stylist_profile.photo3 = this.state.photo3;
     }
     if (this.state.photo4 !== null) {
-      newStylistData.profile.photo4 = this.state.photo4;
+      newStylistData.stylist_profile.photo4 = this.state.photo4;
     }
     if (this.state.photo5 !== null) {
-      newStylistData.profile.photo5 = this.state.photo5;
+      newStylistData.stylist_profile.photo5 = this.state.photo5;
     }
     if (this.state.photo6 !== null) {
-      newStylistData.profile.photo6 = this.state.photo6;
+      newStylistData.stylist_profile.photo6 = this.state.photo6;
     }
-    newStylistData.profile.specializations = this.state.specializations;
+    newStylistData.stylist_profile.specializations = this.state.specializations;
 
+    // axios
+    //   .post(
+    //     "https://styledin-stylists-api.herokuapp.com/api/users/",
+    //     newStylistData
+    //   )
     axios
-      .post(
-        "https://styledin-stylists-api.herokuapp.com/api/users/",
-        newStylistData
-      )
+      .post("http://localhost:8000/stylists_api/stylists/", newStylistData)
       .then(response => {
         console.log(
           "This is what response.data looks like from the API on a successful response",

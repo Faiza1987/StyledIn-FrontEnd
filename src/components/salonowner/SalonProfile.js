@@ -15,9 +15,19 @@ class SalonProfile extends Component {
 	}
 
 	componentDidMount() {
-		axios
+		// axios
+    //   .get(
+    //     "https://salonowners-api.herokuapp.com/owners_api/users/" +
+    //       localStorage.getItem("salonId"),
+    //     {
+    //       headers: {
+    //         Authorization: `JWT ${localStorage.getItem("salonOwnerToken")}`
+    //       }
+    //     }
+    //   )
+    axios
       .get(
-        "https://salonowners-api.herokuapp.com/owners_api/users/" +
+        "http://localhost:8000/owners_api/owners/" +
           localStorage.getItem("salonId"),
         {
           headers: {
@@ -66,27 +76,27 @@ class SalonProfile extends Component {
             </li>
             <li>
               <span className="label">Salon Name:</span>
-              {this.state.salonData.profile.salon_name}
+              {this.state.salonData.salon_profile.salon_name}
             </li>
             <li>
               <span className="label">Salon Address: </span>
-              {this.state.salonData.profile.salon_address}
+              {this.state.salonData.salon_profile.salon_address}
             </li>
             <li>
               <span className="label">Salon City: </span>
-              {this.state.salonData.profile.salon_city}
+              {this.state.salonData.salon_profile.salon_city}
             </li>
             <li>
               <span className="label">Salon State: </span>
-              {this.state.salonData.profile.salon_state}
+              {this.state.salonData.salon_profile.salon_state}
             </li>
             <li>
               <span className="label">Salon Zip Code: </span>
-              {this.state.salonData.profile.salon_zip}
+              {this.state.salonData.salon_profile.salon_zip}
             </li>
             <li>
               <span className="label">Salon Description: </span>
-              {this.state.salonData.profile.salon_description}
+              {this.state.salonData.salon_profile.salon_description}
             </li>
           </ul>
         </summary>

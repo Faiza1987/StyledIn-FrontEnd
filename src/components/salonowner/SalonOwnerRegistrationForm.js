@@ -53,7 +53,7 @@ class SalonOwnerRegistrationForm extends Component {
 			first_name: this.state.first_name,
 			last_name: this.state.last_name,
 			password: this.state.password,
-			profile: {
+			owner_profile: {
 				salon_name: this.state.salon_name,
 				salon_address: this.state.salon_address,
 				salon_city: this.state.salon_city,
@@ -64,18 +64,22 @@ class SalonOwnerRegistrationForm extends Component {
 			}
 		};
 
-		axios.post("https://salonowners-api.herokuapp.com/owners_api/users/", newSalonOwnerData)
-			.then(response => {
-				console.log("This is what response.data looks like from the API on a successful response",
-          response.data );
+    // axios.post("https://salonowners-api.herokuapp.com/owners_api/users/", newSalonOwnerData)
+    axios
+      .post("http://localhost:8000/owners_api/owners/", newSalonOwnerData)
+      .then(response => {
+        console.log(
+          "This is what response.data looks like from the API on a successful response",
+          response.data
+        );
 
-          alert("Your account has been created.")
-			})
-			.catch(error => {
-        alert('Something went wrong, please try again shortly.')
-				this.setState({
-					error: error.message
-				});
+        alert("Your account has been created.");
+      })
+      .catch(error => {
+        alert("Something went wrong, please try again shortly.");
+        this.setState({
+          error: error.message
+        });
       });
       
 	};
