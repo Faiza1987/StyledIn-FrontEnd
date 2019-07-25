@@ -37,13 +37,17 @@ class AllStylists extends Component {
 			return null;
 		}
 		
-		const mappedStylists = this.state.allStylists.map((stylist, i) => {
+		const mappedStylists = this.state.allStylists.filter(stylist => stylist.profile !== null).map((stylist, i) => {
 			return (
         <div key={i} className="stylist-details">
           <ul>
             <li>
+              {/* IF USER IS NOT LOGGED IN REDIRECT TO QUERY PAGE */}
+              {/* ELSE IF USER IS LOGGED IN, REDIRECT TO PROFILE PAGE */}
               <Link to="/query">
-                {stylist.first_name} {stylist.last_name}
+                <strong>{stylist.first_name} {stylist.last_name}</strong>
+                {<br />}
+                Specializations: {stylist.profile.specializations}
               </Link>
             </li>
           </ul>

@@ -39,19 +39,25 @@ class AllSalonOwners extends Component {
 		}
 		
 
-			const mappedSalons = this.state.allSalons.map((salon, index) => {
-				return (
-					<div key={index} className="salon-details">
-						<ul>
-							<li>
-								<Link to="/query">
-									 {salon.first_name}
-								</Link>
-							</li>
-						</ul>
-					</div>
-				);
-			})
+				const mappedSalons = this.state.allSalons
+          .filter(salon => salon.profile !== null)
+          .map((salon, index) => {
+            return (
+              <div key={index} className="salon-details">
+                <ul>
+                  <li>
+                    <Link to="/query">
+                      <strong>{salon.profile.salon_name}</strong>
+                      {<br />}
+                      City: {salon.profile.salon_city}
+                      {<br />}
+                      Job Openings: {salon.jobs.length}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            );
+          });
 		
 				return (
 					<div>
