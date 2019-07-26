@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './AllSalonOwners.css';
 import { Link } from 'react-router-dom';
+import './BaseURLs';
 
 class AllSalonOwners extends Component {
 	constructor(props){
@@ -14,21 +15,23 @@ class AllSalonOwners extends Component {
 	}
 
 	componentDidMount(){
-		axios.get(
-			"https://salonowners-api.herokuapp.com/owners_api/users/"
-		)
-		.then(response => {
-			console.log("COMPONENT DID MOUNT", response.data);
+		// axios.get(
+		// 	"https://salonowners-api.herokuapp.com/owners_api/users/"
+		// )
+			axios
+        .get("http://localhost:8000/owners_api/owners/")
+        .then(response => {
+          console.log("COMPONENT DID MOUNT", response.data);
 
-			this.setState({
-				allSalons: response.data
-			})
-		})
-		.catch(error => {
-			this.setState({
-				error: error.message
-			});
-		});
+          this.setState({
+            allSalons: response.data
+          });
+        })
+        .catch(error => {
+          this.setState({
+            error: error.message
+          });
+        });
 	}
 
 	render(){
@@ -40,16 +43,16 @@ class AllSalonOwners extends Component {
 		
 
 				const mappedSalons = this.state.allSalons
-          .filter(salon => salon.profile !== null)
+          .filter(salon => salon.salon_profile !== null)
           .map((salon, index) => {
             return (
               <div key={index} className="salon-details">
                 <ul>
                   <li>
                     <Link to="/query">
-                      <strong>{salon.profile.salon_name}</strong>
+                      <strong>{salon.salon_profile.salon_name}</strong>
                       {<br />}
-                      City: {salon.profile.salon_city}
+                      City: {salon.salon_profile.salon_city}
                       {<br />}
                       Job Openings: {salon.jobs.length}
                     </Link>

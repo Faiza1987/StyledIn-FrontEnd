@@ -14,7 +14,9 @@ class AllStylists extends Component {
 	}
 
 	componentDidMount(){
-		axios
+		// axios
+    //   .get("https://styledin-stylists-api.herokuapp.com/api/users/")
+    axios
       .get("https://styledin-stylists-api.herokuapp.com/api/users/")
       .then(response => {
         console.log("COMPONENT DID MOUNT", response.data);
@@ -37,9 +39,6 @@ class AllStylists extends Component {
 			return null;
 		}
     
-    if(localStorage.getItem("salonId") !== null){
-      window.location ='/stylist-profile' 
-    } 
 
 		const mappedStylists = this.state.allStylists.filter(stylist => stylist.profile !== null).map((stylist, i) => {
 			return (

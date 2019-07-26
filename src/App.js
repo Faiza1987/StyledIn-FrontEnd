@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import SignUpQuery from './components/SignUpQuery';
+import SignUpQuery from './SignUpQuery';
 import StylistRegistrationForm from './components/stylists/StylistRegistrationForm';
 import SalonOwnerRegistrationForm from './components/salonowner/SalonOwnerRegistrationForm';
-import LogInQuery from './components/LogInQuery';
+import LogInQuery from './LogInQuery';
 import StylistLogIn from './components/stylists/StylistLogIn';
 import StylistLoginSuccess from './components/stylists/StylistLoginSuccess';
 import SearchJobs from './SearchJobs';

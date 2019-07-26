@@ -71,51 +71,57 @@ class EditStylistProfile extends Component {
       password: this.state.password,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
-      profile: {
+      stylist_profile: {
         phone_number: this.state.phone_number,
         years_experience: this.state.years_experience
       }
     };
     if (this.state.licenses !== null) {
-      updatedStylistData.profile.licenses = this.state.licenses;
+      updatedStylistData.stylist_profile.licenses = this.state.licenses;
     }
     if (this.state.photo1 !== null) {
-      updatedStylistData.profile.photo1 = this.state.photo1;
+      updatedStylistData.stylist_profile.photo1 = this.state.photo1;
     }
     if (this.state.photo2 !== null) {
-      updatedStylistData.profile.photo2 = this.state.photo2;
+      updatedStylistData.stylist_profile.photo2 = this.state.photo2;
     }
     if (this.state.photo3 !== null) {
-      updatedStylistData.profile.photo3 = this.state.photo3;
+      updatedStylistData.stylist_profile.photo3 = this.state.photo3;
     }
     if (this.state.photo4 !== null) {
-      updatedStylistData.profile.photo4 = this.state.photo4;
+      updatedStylistData.stylist_profile.photo4 = this.state.photo4;
     }
     if (this.state.photo5 !== null) {
-      updatedStylistData.profile.photo5 = this.state.photo5;
+      updatedStylistData.stylist_profile.photo5 = this.state.photo5;
     }
     if (this.state.photo6 !== null) {
-      updatedStylistData.profile.photo6 = this.state.photo6;
+      updatedStylistData.stylist_profile.photo6 = this.state.photo6;
     }
-		updatedStylistData.profile.specializations = this.state.specializations;
+		updatedStylistData.stylist_profile.specializations = this.state.specializations;
 		
-		axios.put(
-      "https://styledin-stylists-api.herokuapp.com/api/users/" + localStorage.getItem("stylistId") + "/",
-      updatedStylistData,
-      {
-				headers: {
-					Authorization: `JWT ${localStorage.getItem("token")}`
-				}
-			}
-		)
-		.then(response => {
-			console.log("This is what response.data looks like from the API on a successful response", response.data);
-		})
-		.catch(error => {
-			this.setState({
-				error: error.message
-			});
-		});
+		axios
+      .put(
+        "http://localhost:8000/stylists_api/stylists/" +
+          localStorage.getItem("stylistId") +
+          "/",
+        updatedStylistData,
+        {
+          headers: {
+            Authorization: `JWT ${localStorage.getItem("token")}`
+          }
+        }
+      )
+      .then(response => {
+        console.log(
+          "This is what response.data looks like from the API on a successful response",
+          response.data
+        );
+      })
+      .catch(error => {
+        this.setState({
+          error: error.message
+        });
+      });
 	}
 
 	render(){

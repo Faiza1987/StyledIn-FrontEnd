@@ -14,21 +14,23 @@ class SearchJobs extends Component {
 	}
 
 	componentDidMount(){
-		axios.get(
-			"https://salonowners-api.herokuapp.com/jobs_api/jobs/"
-		)
-		.then(response => {
-			console.log("ALL JOBS", response.data);
+		// axios.get(
+		// 	"https://salonowners-api.herokuapp.com/jobs_api/jobs/"
+    // )
+    		axios
+          .get("http://localhost:8000/jobs_api/jobs/")
+          .then(response => {
+            console.log("ALL JOBS", response.data);
 
-			this.setState({
-				allJobs: response.data
-			})
-		})
-		.catch(error => {
-			this.setState({
-				error: error.message
-			}); 
-		});
+            this.setState({
+              allJobs: response.data
+            });
+          })
+          .catch(error => {
+            this.setState({
+              error: error.message
+            });
+          });
 	}
 
   applyJob = () => {

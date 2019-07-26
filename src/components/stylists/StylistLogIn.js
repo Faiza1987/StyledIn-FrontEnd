@@ -44,7 +44,7 @@ class StylistLogIn extends Component {
     }
     // POST request to retreive JWT auth token from server
     axios.post(
-      "https://styledin-stylists-api.herokuapp.com/api/auth/login/", payload)
+      "http://localhost:8000/stylists_api/auth/login/", payload)
       .then(response => {
         console.log("RESPONSE DATA", JSON.stringify(response));
         
