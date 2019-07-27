@@ -14,11 +14,11 @@ class SearchJobs extends Component {
 	}
 
 	componentDidMount(){
-		// axios.get(
-		// 	"https://salonowners-api.herokuapp.com/jobs_api/jobs/"
-    // )
-    		axios
-          .get("http://localhost:8000/jobs_api/jobs/")
+		axios.get(
+			"https://salonowners-api.herokuapp.com/jobs_api/jobs/"
+    )
+    		// axios
+        //   .get("https://styledin-api.herokuapp.com/jobs_api/jobs/")
           .then(response => {
             console.log("ALL JOBS", response.data);
 

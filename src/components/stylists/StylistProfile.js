@@ -14,41 +14,32 @@ class StylistProfile extends Component {
 	}
 
 	componentDidMount() {
-			// axios
-      //   .get(
-      //     "https://styledin-stylists-api.herokuapp.com/api/users/" +
-      //       localStorage.getItem("stylistId"),
-      //     {
-      //       headers: {
-      //         Authorization: `JWT ${localStorage.getItem("token")}`
-      //       }
-      //     }
-      //   )
-      	axios
-          .get(
-            "http://localhost:8000/stylists_api/stylists/" +
-              localStorage.getItem("stylistId"),
-            {
-              headers: {
-                Authorization: `JWT ${localStorage.getItem("token")}`
-              }
+			axios
+        .get(
+          //     "https://styledin-api.herokuapp.com/stylists_api/stylists/" +
+          "https://styledin-stylists-api.herokuapp.com/api/users/" +
+            localStorage.getItem("stylistId"),
+          {
+            headers: {
+              Authorization: `JWT ${localStorage.getItem("token")}`
             }
-          )
-          .then(response => {
-            console.log(
-              "This is what response.data looks like from the API on a successful response",
-              response.data
-            );
+          }
+        )
+        .then(response => {
+          console.log(
+            "This is what response.data looks like from the API on a successful response",
+            response.data
+          );
 
-            this.setState({
-              stylistData: response.data
-            });
-          })
-          .catch(error => {
-            this.setState({
-              error: error.message
-            });
+          this.setState({
+            stylistData: response.data
           });
+        })
+        .catch(error => {
+          this.setState({
+            error: error.message
+          });
+        });
 	}
 
 	render() {
@@ -79,49 +70,49 @@ class StylistProfile extends Component {
             </li>
             <li>
               <span className="label"> Phone Number: </span>{" "}
-              {this.state.stylistData.stylist_profile.phone_number}
+              {this.state.stylistData.profile.phone_number}
             </li>
             <li>
               <span className="label"> Experience (in years): </span>{" "}
-              {this.state.stylistData.stylist_profile.years_experience}
+              {this.state.stylistData.profile.years_experience}
             </li>
             <li>
               <span className="label"> Specializations: </span>{" "}
-              {this.state.stylistData.stylist_profile.specializations}
+              {this.state.stylistData.profile.specializations}
             </li>
             <li>
               <span className="label"> License/Certification: </span>{" "}
-              {this.state.stylistData.stylist_profile.licenses}{" "}
+              {this.state.stylistData.profile.licenses}{" "}
             </li>
             <li>
               {" "}
               <span className="label"> Photo 1: </span>{" "}
-              {this.state.stylistData.stylist_profile.photo1}{" "}
+              {this.state.stylistData.profile.photo1}{" "}
             </li>
             <li>
               {" "}
               <span className="label"> Photo 2: </span>{" "}
-              {this.state.stylistData.stylist_profile.photo2}{" "}
+              {this.state.stylistData.profile.photo2}{" "}
             </li>
             <li>
               {" "}
               <span className="label"> Photo 3: </span>{" "}
-              {this.state.stylistData.stylist_profile.photo3}{" "}
+              {this.state.stylistData.profile.photo3}{" "}
             </li>
             <li>
               {" "}
               <span className="label"> Photo 4:</span>{" "}
-              {this.state.stylistData.stylist_profile.photo4}{" "}
+              {this.state.stylistData.profile.photo4}{" "}
             </li>
             <li>
               {" "}
               <span className="label"> Photo 5: </span>{" "}
-              {this.state.stylistData.stylist_profile.photo5}{" "}
+              {this.state.stylistData.profile.photo5}{" "}
             </li>
             <li>
               {" "}
               <span className="label"> Photo 6: </span>{" "}
-              {this.state.stylistData.stylist_profile.photo6}{" "}
+              {this.state.stylistData.profile.photo6}{" "}
             </li>
           </ul>
         </summary>

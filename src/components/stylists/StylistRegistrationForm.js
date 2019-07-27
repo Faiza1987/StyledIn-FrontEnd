@@ -12,14 +12,14 @@ class StylistRegistrationForm extends Component {
       phone_number: "",
       email: "",
       password: "",
-      experience_in_years: "",
-      licenses: "",
-      photo1: "",
-      photo2: "",
-      photo3: "",
-      photo4: "",
-      photo5: "",
-      photo6: "",
+      years_experience: "",
+      licenses: null,
+      photo1: null,
+      photo2: null,
+      photo3: null,
+      photo4: null,
+      photo5: null,
+      photo6: null,
       specializations: "",
       error: null
     };
@@ -55,7 +55,7 @@ class StylistRegistrationForm extends Component {
       phone_number: "",
       email: "",
       password: "",
-      experience_in_years: "",
+      years_experience: "",
       licenses: null,
       photo1: null,
       photo2: null,
@@ -73,41 +73,42 @@ class StylistRegistrationForm extends Component {
       password: this.state.password,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
-      stylist_profile: {
+      profile: {
         phone_number: this.state.phone_number,
-        experience_in_years: this.state.experience_in_years
+        years_experience:this.state.years_experience,
+        specializations: this.state.specializations,
       }
     };
+
     if (this.state.licenses !== null) {
-      newStylistData.stylist_profile.licenses = this.state.licenses;
+      newStylistData.profile.licenses = this.state.licenses;
     }
     if (this.state.photo1 !== null) {
-      newStylistData.stylist_profile.photo1 = this.state.photo1;
+      newStylistData.profile.photo1 = this.state.photo1;
     }
     if (this.state.photo2 !== null) {
-      newStylistData.stylist_profile.photo2 = this.state.photo2;
+      newStylistData.profile.photo2 = this.state.photo2;
     }
     if (this.state.photo3 !== null) {
-      newStylistData.stylist_profile.photo3 = this.state.photo3;
+      newStylistData.profile.photo3 = this.state.photo3;
     }
     if (this.state.photo4 !== null) {
-      newStylistData.stylist_profile.photo4 = this.state.photo4;
+      newStylistData.profile.photo4 = this.state.photo4;
     }
     if (this.state.photo5 !== null) {
-      newStylistData.stylist_profile.photo5 = this.state.photo5;
+      newStylistData.profile.photo5 = this.state.photo5;
     }
     if (this.state.photo6 !== null) {
-      newStylistData.stylist_profile.photo6 = this.state.photo6;
+      newStylistData.profile.photo6 = this.state.photo6;
     }
-    newStylistData.stylist_profile.specializations = this.state.specializations;
 
-    // axios
-    //   .post(
-    //     "https://styledin-stylists-api.herokuapp.com/api/users/",
-    //     newStylistData
-    //   )
+
     axios
-      .post("http://localhost:8000/stylists_api/stylists/", newStylistData)
+      .post(
+        // "https://styledin-api.herokuapp.com/stylists_api/stylists/",
+        "https://styledin-stylists-api.herokuapp.com/api/users/",
+        newStylistData
+      )
       .then(response => {
         console.log(
           "This is what response.data looks like from the API on a successful response",
@@ -180,8 +181,9 @@ class StylistRegistrationForm extends Component {
               <input
                 placeholder="Experience (In years)"
                 type="text"
-                name="experience_in_years"
-                value={this.state.experience_in_years}
+                name="years_experience"
+                // defaultValue={this.state.years_experience}
+                value={this.state.years_experience}
                 onChange={this.onChangeHandler}
                 required
               />

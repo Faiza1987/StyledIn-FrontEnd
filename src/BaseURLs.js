@@ -1,3 +1,10 @@
+// HEROKU URLs
+
+// OWNERS_API
+// GET, POST, PUT
+"https://styledin-api.herokuapp.com/owners_api/owners/"
+
+
 // Localhost URLs
 
 	// SALON OWNERS
@@ -22,3 +29,4 @@
 	"http://localhost:8000/stylists_api/stylists/"
 	// EDIT PROFILE
 	"http://localhost:8000/stylists_api/stylists/"
+

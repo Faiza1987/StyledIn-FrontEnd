@@ -43,19 +43,23 @@ class StylistLogIn extends Component {
       password: this.state.password,
     }
     // POST request to retreive JWT auth token from server
-    axios.post(
-      "http://localhost:8000/stylists_api/auth/login/", payload)
+    axios
+      .post(
+        // "https://styledin-api.herokuapp.com/stylists_api/auth/login/",
+        "https://styledin-stylists-api.herokuapp.com/api/auth/login/",
+        payload
+      )
       .then(response => {
         console.log("RESPONSE DATA", JSON.stringify(response));
-        
-        localStorage.setItem("token", response.data['token']);
+
+        localStorage.setItem("token", response.data["token"]);
         localStorage.setItem("stylistId", response.data.user.pk);
 
-        this.props.setStylistIdCallback(localStorage.getItem('stylistId'));
+        this.props.setStylistIdCallback(localStorage.getItem("stylistId"));
 
-        console.log("TOKEN:", localStorage.getItem('token'));
+        console.log("TOKEN:", localStorage.getItem("token"));
         console.log("Stylist ID:", localStorage.getItem("stylistId"));
-        // LOG USER IN WITH TOKEN 
+        // LOG USER IN WITH TOKEN
         // REDIRECT TO LOGINSUCCESS COMPONENT
         window.location = "/stylist-login-success";
       })

@@ -15,11 +15,11 @@ class AllSalonOwners extends Component {
 	}
 
 	componentDidMount(){
-		// axios.get(
-		// 	"https://salonowners-api.herokuapp.com/owners_api/users/"
-		// )
-			axios
-        .get("http://localhost:8000/owners_api/owners/")
+		axios.get(
+			"https://salonowners-api.herokuapp.com/owners_api/users/"
+		)
+			// axios
+      //   .get("https://styledin-api.herokuapp.com/owners_api/owners/")
         .then(response => {
           console.log("COMPONENT DID MOUNT", response.data);
 
@@ -43,16 +43,16 @@ class AllSalonOwners extends Component {
 		
 
 				const mappedSalons = this.state.allSalons
-          .filter(salon => salon.salon_profile !== null)
+          .filter(salon => salon.profile !== null)
           .map((salon, index) => {
             return (
               <div key={index} className="salon-details">
                 <ul>
                   <li>
                     <Link to="/query">
-                      <strong>{salon.salon_profile.salon_name}</strong>
+                      <strong>{salon.profile.salon_name}</strong>
                       {<br />}
-                      City: {salon.salon_profile.salon_city}
+                      City: {salon.profile.salon_city}
                       {<br />}
                       Job Openings: {salon.jobs.length}
                     </Link>

@@ -46,7 +46,11 @@ class SalonOwnerLogin extends Component {
 		}
 
 		axios
-      .post("http://localhost:8000/owners_api/auth/login/", payload)
+      .post(
+				// "https://styledin-api.herokuapp.com/owners_api/auth/login/",
+				"https://salonowners-api.herokuapp.com/owners_api/auth/login/",
+        payload
+      )
       .then(response => {
         console.log("RESPONSE DATA", response);
 

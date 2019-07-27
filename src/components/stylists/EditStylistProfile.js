@@ -71,37 +71,38 @@ class EditStylistProfile extends Component {
       password: this.state.password,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
-      stylist_profile: {
+      profile: {
         phone_number: this.state.phone_number,
         years_experience: this.state.years_experience
       }
     };
     if (this.state.licenses !== null) {
-      updatedStylistData.stylist_profile.licenses = this.state.licenses;
+      updatedStylistData.profile.licenses = this.state.licenses;
     }
     if (this.state.photo1 !== null) {
-      updatedStylistData.stylist_profile.photo1 = this.state.photo1;
+      updatedStylistData.profile.photo1 = this.state.photo1;
     }
     if (this.state.photo2 !== null) {
-      updatedStylistData.stylist_profile.photo2 = this.state.photo2;
+      updatedStylistData.profile.photo2 = this.state.photo2;
     }
     if (this.state.photo3 !== null) {
-      updatedStylistData.stylist_profile.photo3 = this.state.photo3;
+      updatedStylistData.profile.photo3 = this.state.photo3;
     }
     if (this.state.photo4 !== null) {
-      updatedStylistData.stylist_profile.photo4 = this.state.photo4;
+      updatedStylistData.profile.photo4 = this.state.photo4;
     }
     if (this.state.photo5 !== null) {
-      updatedStylistData.stylist_profile.photo5 = this.state.photo5;
+      updatedStylistData.profile.photo5 = this.state.photo5;
     }
     if (this.state.photo6 !== null) {
-      updatedStylistData.stylist_profile.photo6 = this.state.photo6;
+      updatedStylistData.profile.photo6 = this.state.photo6;
     }
-		updatedStylistData.stylist_profile.specializations = this.state.specializations;
+		updatedStylistData.profile.specializations = this.state.specializations;
 		
 		axios
       .put(
-        "http://localhost:8000/stylists_api/stylists/" +
+        // "https://styledin-api.herokuapp.com/stylists_api/stylists/" +
+        "https://styledin-stylists-api.herokuapp.com/api/users/" +
           localStorage.getItem("stylistId") +
           "/",
         updatedStylistData,

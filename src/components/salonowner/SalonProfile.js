@@ -27,7 +27,8 @@ class SalonProfile extends Component {
     //   )
     axios
       .get(
-        "http://localhost:8000/owners_api/owners/" +
+        // "https://styledin-api.herokuapp.com/owners_api/owners/" +
+        "https://salonowners-api.herokuapp.com/owners_api/users/",
           localStorage.getItem("salonId"),
         {
           headers: {

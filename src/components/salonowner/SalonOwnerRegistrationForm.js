@@ -49,24 +49,27 @@ class SalonOwnerRegistrationForm extends Component {
 
 	addSalonOwner = () => {
 		const newSalonOwnerData = {
-			email: this.state.email,
-			first_name: this.state.first_name,
-			last_name: this.state.last_name,
-			password: this.state.password,
-			owner_profile: {
-				salon_name: this.state.salon_name,
-				salon_address: this.state.salon_address,
-				salon_city: this.state.salon_city,
-				salon_state: this.state.salon_state,
-				salon_zip: this.state.salon_zip,
-				salon_phone_number: this.state.salon_phone_number,
-				salon_description: this.state.salon_description
-			}
-		};
+      email: this.state.email,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      password: this.state.password,
+      salon_profile: {
+        salon_name: this.state.salon_name,
+        salon_address: this.state.salon_address,
+        salon_city: this.state.salon_city,
+        salon_state: this.state.salon_state,
+        salon_zip: this.state.salon_zip,
+        salon_phone_number: this.state.salon_phone_number,
+        salon_description: this.state.salon_description
+      }
+    };
 
-    // axios.post("https://salonowners-api.herokuapp.com/owners_api/users/", newSalonOwnerData)
-    axios
-      .post("http://localhost:8000/owners_api/owners/", newSalonOwnerData)
+    axios.post("https://salonowners-api.herokuapp.com/owners_api/users/", newSalonOwnerData)
+    // axios
+    //   .post(
+    //     "https://styledin-api.herokuapp.com/owners_api/owners/",
+    //     newSalonOwnerData
+    //   )
       .then(response => {
         console.log(
           "This is what response.data looks like from the API on a successful response",
@@ -76,12 +79,10 @@ class SalonOwnerRegistrationForm extends Component {
         alert("Your account has been created.");
       })
       .catch(error => {
-        alert("Something went wrong, please try again shortly.");
         this.setState({
           error: error.message
         });
-      });
-      
+      });  
 	};
 
 

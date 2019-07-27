@@ -64,28 +64,28 @@ class EditSalonProfile extends Component {
       }
     };
 
-			// axios.put(
-			// 	"https://salonowners-api.herokuapp.com/owners_api/users/" + localStorage.getItem("salonId") + "/", updatedSalonData,
-			// 	{
-			// 		headers: {
-			// 			Authorization: `JWT ${localStorage.getItem("salonOwnerToken")}`
-			// 		}
-			// 	}
-      // )
-      axios
-        .put(
-          "http://localhost:8000/owners_api/owners/" +
-            localStorage.getItem("salonId") +
-            "/",
-          updatedSalonData,
-          {
-            headers: {
-              Authorization: `JWT ${localStorage.getItem(
-                "salonOwnerToken"
-              )}`
-            }
-          }
-        )
+			axios.put(
+				"https://salonowners-api.herokuapp.com/owners_api/users/" + localStorage.getItem("salonId") + "/", updatedSalonData,
+				{
+					headers: {
+						Authorization: `JWT ${localStorage.getItem("salonOwnerToken")}`
+					}
+				}
+      )
+      // axios
+      //   .put(
+      //     "https://styledin-api.herokuapp.com/owners_api/owners/" +
+      //       localStorage.getItem("salonId") +
+      //       "/",
+      //     updatedSalonData,
+      //     {
+      //       headers: {
+      //         Authorization: `JWT ${localStorage.getItem(
+      //           "salonOwnerToken"
+      //         )}`
+      //       }
+      //     }
+      //   )
         .then(response => {
           console.log(
             "This is what response.data looks like from the API on a successful response",

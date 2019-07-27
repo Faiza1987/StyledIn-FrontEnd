@@ -57,32 +57,10 @@ class CreateJob extends Component {
 
     // Make a POST request to post job to API
     // WILL NEED: Id of the salon that the job will be attached to
-    // axios
-    //   .post(
-    //     "https://salonowners-api.herokuapp.com/jobs_api/jobs/",
-    //     payload,
-    //     {
-    //       headers: {
-    //         Authorization: `JWT ${localStorage.getItem("salonOwnerToken")}`
-    //       }
-    //     }
-    //   )
-    //   .then(response => {
-    //     console.log(
-    //       "This is what response.data looks like from the API on a successful response",
-    //       response.data
-    //     );
-
-    //     alert('The job has been created!');
-    //   })
-    //   .catch(error => {
-    //     alert("Something went wrong, please try again shortly.");
-    //     this.setState({
-    //       error: error.message
-    //     });
-    //   });
     axios
-      .post("http://localhost:8000/jobs_api/jobs/", payload, 
+      .post(
+        "https://salonowners-api.herokuapp.com/jobs_api/jobs/",
+        payload,
         {
           headers: {
             Authorization: `JWT ${localStorage.getItem("salonOwnerToken")}`
@@ -94,7 +72,8 @@ class CreateJob extends Component {
           "This is what response.data looks like from the API on a successful response",
           response.data
         );
-        alert("The job has been created!");
+
+        alert('The job has been created!');
       })
       .catch(error => {
         alert("Something went wrong, please try again shortly.");
@@ -102,6 +81,25 @@ class CreateJob extends Component {
           error: error.message
         });
       });
+  //   axios
+  //     .post("https://styledin-api.herokuapp.com/jobs_api/jobs/", payload, {
+  //       headers: {
+  //         Authorization: `JWT ${localStorage.getItem("salonOwnerToken")}`
+  //       }
+  //     })
+  //     .then(response => {
+  //       console.log(
+  //         "This is what response.data looks like from the API on a successful response",
+  //         response.data
+  //       );
+  //       alert("The job has been created!");
+  //     })
+  //     .catch(error => {
+  //       alert("Something went wrong, please try again shortly.");
+  //       this.setState({
+  //         error: error.message
+  //       });
+  //     });
   };
 
 	render(){
