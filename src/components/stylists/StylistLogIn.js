@@ -46,7 +46,8 @@ class StylistLogIn extends Component {
     axios
       .post(
         // "https://styledin-api.herokuapp.com/stylists_api/auth/login/",
-        "https://styledin-stylists-api.herokuapp.com/api/auth/login/",
+        // "https://styledin-stylists-api.herokuapp.com/api/auth/login/",
+        "http://localhost:8000/api/auth/login/",
         payload
       )
       .then(response => {

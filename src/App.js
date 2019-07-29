@@ -66,7 +66,7 @@ class App extends Component {
               </li>
               <li className="login">
                 <Link to="/login-query">
-                  {this.state.stylistId === null ? "Log In" : "Log Out"}
+                  {this.state.stylistId === null || this.state.salonId === null ? "Log In" : "Log Out"}
                 </Link>
               </li>
               <li className="all-stylists">

@@ -34,11 +34,39 @@ class SearchJobs extends Component {
 	}
 
   applyJob = () => {
-    if(localStorage.getItem("stylistId") !== null){
-      alert("Your application has been submitted!");
-    } else {
-      alert("You must be logged in as a stylist to apply for jobs");
-    }
+    // if(localStorage.getItem("stylistId") !== null){
+    //   alert("Your application has been submitted!");
+    // } else {
+    //   alert("You must be logged in as a stylist to apply for jobs");
+    // }
+    const payload = {
+      stylistId: localStorage.getItem("stylistId"),
+      title: this.state.allJobs[0].title,
+      hourly_rate: this.state.allJobs[0].hourly_rate,
+      company: this.state.allJobs[0].company,
+      address: this.state.allJobs[0].address,
+      city: this.state.allJobs[0].city,
+      state: this.state.allJobs[0].state,
+      zip_code: this.state.allJobs[0].zip_code,
+      description: this.state.allJobs[0].description,
+      contact_email: this.state.allJobs[0].contact_email
+    };
+    axios
+      .post(
+        "https://styledin-stylists-api.herokuapp.com/jobs_api/applied_jobs/",
+        payload,
+        {
+          headers: {
+            Authorization: `JWT ${localStorage.getItem("token")}`
+          }
+        }
+      )
+      .then(response => {})
+      .catch(error => {
+        this.setState({
+          error: error.message
+        });
+      });
   }
 	render(){
 
