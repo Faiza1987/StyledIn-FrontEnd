@@ -1,5 +1,22 @@
-button {
-	background: green;
-	border-radius: 5px;
+@import url('https://fonts.googleapis.com/css?family=Bad+Script|DM+Serif+Display|Great+Vibes|Tangerine&display=swap');
+
+/* .signup-query {
+	text-align: center;
+	padding-top: 8em;
+	font-family: 'DM Serif Display', serif;
 }
 
+.signup-query li a {
+	color: white;
+}
+
+.signup-link {
+	padding-top: 1em;
+	font-size: 35px;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+} */
+
+.link {
+	font-size: 35px;
+}

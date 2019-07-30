@@ -66,7 +66,10 @@ class App extends Component {
               </li>
               <li className="login">
                 <Link to="/login-query">
-                  {this.state.stylistId === null || this.state.salonId === null ? "Log In" : "Log Out"}
+                  {this.state.stylistId === null ||
+                  this.state.salonId === null
+                    ? "Log In"
+                    : "Log Out"}
                 </Link>
               </li>
               <li className="all-stylists">
@@ -115,7 +118,7 @@ class App extends Component {
             )}
           />
           <Route path="/all-stylists" component={AllStylists} />
-          <Route path="/all-salons" component={AllSalonOwners}/>
+          <Route path="/all-salons" component={AllSalonOwners} />
           <Route path="/search-jobs" component={SearchJobs} />
           <Route path="/query" component={QueryPage} />
           <Route
@@ -124,7 +127,10 @@ class App extends Component {
               <SalonOwnerLogin setSalonIdCallback={this.setSalonId} />
             )}
           />
-          <Route path="/salonowner-login-success" component={SalonOwnerLoginSuccess} />
+          <Route
+            path="/salonowner-login-success"
+            component={SalonOwnerLoginSuccess}
+          />
           <Route path="/salon-profile" component={SalonProfile} />
           <Route path="/edit-salon-profile" component={EditSalonProfile} />
           <Route path="/create-job" component={CreateJob} />
