@@ -53,7 +53,7 @@ class EditSalonProfile extends Component {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       password: this.state.password,
-      salon_profile: {
+      profile: {
         salon_name: this.state.salon_name,
         salon_address: this.state.salon_address,
         salon_city: this.state.salon_city,
@@ -72,20 +72,6 @@ class EditSalonProfile extends Component {
 					}
 				}
       )
-      // axios
-      //   .put(
-      //     "https://styledin-api.herokuapp.com/owners_api/owners/" +
-      //       localStorage.getItem("salonId") +
-      //       "/",
-      //     updatedSalonData,
-      //     {
-      //       headers: {
-      //         Authorization: `JWT ${localStorage.getItem(
-      //           "salonOwnerToken"
-      //         )}`
-      //       }
-      //     }
-      //   )
         .then(response => {
           console.log(
             "This is what response.data looks like from the API on a successful response",

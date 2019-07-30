@@ -47,7 +47,6 @@ class SalonOwnerLogin extends Component {
 
 		axios
       .post(
-				// "https://styledin-api.herokuapp.com/owners_api/auth/login/",
 				"https://salonowners-api.herokuapp.com/owners_api/auth/login/",
         payload
       )

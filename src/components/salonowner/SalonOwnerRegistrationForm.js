@@ -53,7 +53,7 @@ class SalonOwnerRegistrationForm extends Component {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       password: this.state.password,
-      salon_profile: {
+      profile: {
         salon_name: this.state.salon_name,
         salon_address: this.state.salon_address,
         salon_city: this.state.salon_city,
@@ -65,11 +65,6 @@ class SalonOwnerRegistrationForm extends Component {
     };
 
     axios.post("https://salonowners-api.herokuapp.com/owners_api/users/", newSalonOwnerData)
-    // axios
-    //   .post(
-    //     "https://styledin-api.herokuapp.com/owners_api/owners/",
-    //     newSalonOwnerData
-    //   )
       .then(response => {
         console.log(
           "This is what response.data looks like from the API on a successful response",

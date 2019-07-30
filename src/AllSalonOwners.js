@@ -18,8 +18,6 @@ class AllSalonOwners extends Component {
 		axios.get(
 			"https://salonowners-api.herokuapp.com/owners_api/users/"
 		)
-			// axios
-      //   .get("https://styledin-api.herokuapp.com/owners_api/owners/")
         .then(response => {
           console.log("COMPONENT DID MOUNT", response.data);
 

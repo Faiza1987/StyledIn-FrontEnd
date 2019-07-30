@@ -101,7 +101,6 @@ class EditStylistProfile extends Component {
 		
 		axios
       .put(
-        // "https://styledin-api.herokuapp.com/stylists_api/stylists/" +
         "https://styledin-stylists-api.herokuapp.com/api/users/" +
           localStorage.getItem("stylistId") +
           "/",

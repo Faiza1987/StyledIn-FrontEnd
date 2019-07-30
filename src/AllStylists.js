@@ -16,8 +16,6 @@ class AllStylists extends Component {
 	componentDidMount(){
 		axios
       .get("https://styledin-stylists-api.herokuapp.com/api/users/")
-    // axios
-    //   .get("https://styledin-api.herokuapp.com/stylists_api/stylists/")
       .then(response => {
         console.log("COMPONENT DID MOUNT", response.data);
 
