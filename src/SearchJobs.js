@@ -32,11 +32,11 @@ class SearchJobs extends Component {
 	}
 
   applyJob = () => {
-    // if(localStorage.getItem("stylistId") !== null){
-    //   alert("Your application has been submitted!");
-    // } else {
-    //   alert("You must be logged in as a stylist to apply for jobs");
-    // }
+    if(localStorage.getItem("stylistId") !== null){
+      alert("Your application has been submitted!");
+    } else {
+      alert("You must be logged in as a stylist to apply for jobs");
+    }
     const payload = {
       stylistId: localStorage.getItem("stylistId"),
       title: this.state.allJobs[0].title,
